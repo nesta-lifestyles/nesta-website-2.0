@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import {CSSTransition, SwitchTransition, Transition} from 'react-transition-group';
+import {CSSTransition, SwitchTransition} from 'react-transition-group';
 import { H1, H2 } from "../../elements/text";
 import React from 'react';
-import { Button, WhiteButton, RevertButton } from "../../elements/button";
+import { WhiteButton, RevertButton } from "../../elements/button";
 
 const DivText = styled.div`
     position: absolute;

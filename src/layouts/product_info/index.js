@@ -1,10 +1,6 @@
 
 import React from "react"
 import styled from "styled-components"
-import ville200 from "../../images/ville/ville_200.jpg"
-import ville201 from "../../images/ville/ville_201.jpg"
-import ville202 from "../../images/ville/ville_202.jpg"
-import ville203 from "../../images/ville/ville_203.png"
 import { useNavigate } from "react-router-dom"
 
 

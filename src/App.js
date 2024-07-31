@@ -2,8 +2,6 @@ import './App.css';
 import Navbar from './components/navbar';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NestaVille from './pages/nesta_ville';
-import NestaDesign from './pages/nesta_design';
 import styled from 'styled-components';
 import NestaHomePage from './pages/home';
 import { NestaDesignHomePage } from './pages/nesta_design/nesta_design';
@@ -13,7 +11,6 @@ import NestaDesignContour from './pages/nesta_design/contour';
 import NestaDesignSerendi from './pages/nesta_design/serendi';
 import NestaDesignEquinox from './pages/nesta_design/equinox';
 import ScrollToTop from './router/hooks';
-import Footer from './components/footer';
 import NestaVilleClassica from './pages/nesta_ville/classica';
 import NestaVilleHomePage from './pages/nesta_ville/home_page';
 import NestaVilleArcadia from './pages/nesta_ville/arcadia';
@@ -21,7 +18,7 @@ import NestaVilleEvoque from './pages/nesta_ville/evoque';
 import NestaVilleEssence from './pages/nesta_ville/essence';
 import NestaVilleWeimar from './pages/nesta_ville/weimar';
 import { ContactUsPage } from './pages/contact_us';
-import { ContactAnExpert, ContactAnExpertPage } from './pages/contact_an_expert';
+import {  ContactAnExpertPage } from './pages/contact_an_expert';
 import { ScheduleCallAgent } from './pages/contact_us/schedule_call';
 
 const EntirePageContainer = styled.div`

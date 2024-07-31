@@ -2,7 +2,6 @@ import React from "react"
 import { WeimarCharacteristics } from "../../components/nesta_ville/weimar/characteristics"
 import styled from "styled-components"
 import { BannerWithTitleLayout } from "../../layouts/banner_layout"
-import bannerImage  from "../../images/ville/200/banner.png"
 import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { initialEssenceVillaData } from "./data/essence"
 

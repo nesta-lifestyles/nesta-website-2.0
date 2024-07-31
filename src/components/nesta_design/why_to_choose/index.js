@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { WhyToChooseLayout } from "../../../layouts/why_to_choose_layout"
-import sampleImage from "../../../images/designs/nesta_design_100/100.png"
 import React from "react"
 
 const Container = styled.div`

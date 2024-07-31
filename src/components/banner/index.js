@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import testImage from "./test_image.png"
 import {CSSTransition, SwitchTransition} from 'react-transition-group';
 import { Title } from "./title"
-import { Indicator, RectangleIndicator } from "../../elements/banner/indicator";
+import {  RectangleIndicator } from "../../elements/banner/indicator";
 import React from 'react';
 
 
@@ -60,16 +59,6 @@ const StyledDiv = styled.div`
 `
 
 
-const StyledImageDiv = styled.div`
-        width: 100%;
-        height: 634px;
-        max-width: 100%;
-        max-height: 634px;
-        position: relative;
-        background-attachment: scroll;
-        /* max-height: ${props => props.height === undefined?"53px":props.height};; */
-        background: ${(props) => `url(${props.src})`} no-repeat center center fixed; 
-`
 
 const DivEnd = styled.div`
    position: absolute;

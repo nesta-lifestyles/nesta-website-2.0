@@ -8,15 +8,12 @@ export const useNestaDesignNavigate = () => {
     const navigate = useNavigate();
     const florenceInitialState = {};
 
-    const goToFlorence = navigate("/design/florence", {state : florenceInitialState})
 }
 
 
 export const goToFlorence = () =>{
     const navigate = useNavigate();
     const florenceInitialState = initialFlorenceDesignData;
-
-    const goToFlorence = navigate("/design/florence", {state : florenceInitialState})
 }
 
 

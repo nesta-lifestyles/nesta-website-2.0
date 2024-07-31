@@ -2,12 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { WeimarCharacteristics } from "../../components/nesta_ville/weimar/characteristics"
 import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
-import { WhyToChoose } from "../../components/nesta_design/why_to_choose"
-import { initialContourDesignData } from "./data/contour"
 import { GalleryLayout2 } from "../../layouts/gallery_layout"
-import { initialEquinoxDesignData } from "./data/equinox"
 import { initialSerendiDesignData } from "./data/serendi"
-import MeetAnExpert from "../../components/meet_an_expert"
 
 const Container = styled.div`
     /* margin-left: 70px;

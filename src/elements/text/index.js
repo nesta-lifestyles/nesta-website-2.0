@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { CSSTransition, SwitchTransition, Transition, TransitionGroup } from "react-transition-group";
-import { useRef, useState } from "react";
 import React from 'react';
 
 const StyledH1 = styled.div`
@@ -98,25 +96,6 @@ const StyledSmallText = styled.p`
       font-size: 10px;
     }
 `
-
-
-const transitions = {
-    entering: {
-      display: 'block'
-    },
-    entered: {
-      opacity: 1,
-      display: 'block'
-    },
-    exiting: {
-      opacity: 0,
-      display: 'block'
-    },
-    exited: {
-      opacity: '0',
-      display: 'none'
-    }
-  };
 
 export const H1 = (props) => {
     return <StyledH1 width={props.width} height={props.height} color={props.color} weight={props.weight}> {props.value} </StyledH1>

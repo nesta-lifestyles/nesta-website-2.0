@@ -1,6 +1,5 @@
 import React from "react"
 
-import sampleImage from "../../../../images/ville/200/banner.png"
 import { TitleTextImagesInRowLayout } from "../../../../layouts/image_text_widget"
 
 

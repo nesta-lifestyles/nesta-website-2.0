@@ -1,5 +1,4 @@
 import React from "react"
-import { H1 } from "../../elements/text"
 import styled from "styled-components"
 import { Slide } from "./slide"
 import { Controls } from "./slide_controls"

@@ -24,12 +24,6 @@ const Container = styled.div`
 `
 
 
-const bannerPage  ={
-    "animation_flag":false,
-    "image":bannerImage,
-    "title":"Weimar"
-}
-
 class NestaVilleArcadia extends React.Component{
     
     constructor(){

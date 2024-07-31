@@ -1,5 +1,5 @@
 import React from "react"
-import { H1, H2 } from "../../../elements/text"
+import { H1} from "../../../elements/text"
 import styled from "styled-components"
 import { ImageWithTextWithTitleLayout, TextWithTitleWithImageLayout, TitleTextImageInRowLayout, TitleTextImagesInRowLayout } from "../../../layouts/image_text_widget"
 import highEndArchImage from "../../../images/ville/features/1.png"

@@ -83,7 +83,7 @@ export const ExploreModelsLayout = (props) => {
     const [buttonTitle, setButtonTitle] = useState("View all model")
     const toggleEnable = () => {
         setIsDisabled(prevState => !prevState);
-        if(buttonTitle==all) {
+        if(buttonTitle===all) {
             setButtonTitle(less)
         } else {
             setButtonTitle(all)
@@ -97,13 +97,13 @@ export const ExploreModelsLayout = (props) => {
         
         for(let i=0;i<props.models.length;i++) {
             if(!isDisabled && i<2) {
-                if(i%2==0) {
+                if(i%2===0) {
                     rightSideExploreModels.push(<ExploreModels model={props.models[i]} key={i} />)
                 } else {
                     leftSideExploreModels.push(<ExploreModels model={props.models[i]} key={i}/>)
                 }
             } else if(isDisabled) {
-                if(i%2==0) {
+                if(i%2===0) {
                     rightSideExploreModels.push(<ExploreModels model={props.models[i]} key={i} />)
                 } else {
                     leftSideExploreModels.push(<ExploreModels model={props.models[i]} key={i}/>)

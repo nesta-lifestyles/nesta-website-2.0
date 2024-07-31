@@ -1,8 +1,6 @@
 
 
 import styled from "styled-components"
-import testImage from "../../../../images/ville/101/banner.png"
-import { TextWithTitleWithImageLayout } from "../../../../layouts/image_text_widget"
 import { TitleWithTextLayout } from "../../../../layouts/text_image_layout"
 import React from "react"
 import { BannerWithTitleAndButtonLayout } from "../../../../layouts/banner_layout"
@@ -26,9 +24,6 @@ const LeftContainer = styled.div`
     margin-top: 10%; */
     /* flex-shrink: unset; */
     margin-top: 10%;
-`
-const RightContainer = styled.div`
-    flex: 10 0 0;
 `
 
 export const BannerComponent = (props) =>{

@@ -5,7 +5,7 @@ import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
 import invertedLogoImage from '../../images/logo/11.png'
-import Product_info, { ProductInfo } from "../../layouts/product_info";
+import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
 
 const NavBar = styled.nav`

@@ -1,5 +1,4 @@
 import React from "react"
-import { Button } from "../../elements/button"
 import styled from "styled-components"
 import { Indicator } from "../../elements/banner/indicator"
 

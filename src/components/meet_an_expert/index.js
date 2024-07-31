@@ -145,18 +145,3 @@ const Div5 = styled.div`
     max-width: 100%;
   }
 `;
-
-const Div6 = styled.div`
-  justify-content: center;
-  border-radius: 8px;
-  background-color: #fff;
-  align-self: start;
-  margin-top: 80px;
-  color: #1b1e1e;
-  padding: 16px 24px;
-  font: 400 14px/150% Poppins, sans-serif;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-`;

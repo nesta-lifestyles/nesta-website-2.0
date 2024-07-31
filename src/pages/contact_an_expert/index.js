@@ -5,17 +5,6 @@ import { H2 } from "../../elements/text"
 import { Image } from "../../elements/image"
 import cancelIcon from "../../images/icons/x.png"
 
-const Container = styled.div`
-     /*dim the background*/
-    /* margin-left: 70px;
-    margin-right: 73px; */
-
-    width: 400px;
-    margin-top: 150px;
-    background-color: white;
-    gap: 100px;
-    border-radius: 16px;
-`
 
 const Container2 = styled.div`
     position: relative;

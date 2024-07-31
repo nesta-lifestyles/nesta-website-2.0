@@ -1,8 +1,7 @@
-import { H1, H2, H3, Text } from "../../elements/text"
+import { H1, H2,  Text } from "../../elements/text"
 import React from 'react';
 import styled from "styled-components";
 import { Image } from "../../elements/image";
-import { Title } from "../../components/banner/title";
 
 const ImageTextTag = styled.div`
     display: flex;

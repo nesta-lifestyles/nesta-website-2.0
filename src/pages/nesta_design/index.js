@@ -1,15 +1,12 @@
 import React from 'react';
 import { Banner } from '../../components/banner';
-import { TextImageLayout, TextWithTitleImageLayout } from '../../layouts/text_image_layout';
-import { FullImageLayout } from '../../layouts/full_row_image_layout';
-import { ImageTextLayout, ImageTextWithTitleLayout } from '../../layouts/image_text_widget';
+import { TextWithTitleImageLayout } from '../../layouts/text_image_layout';
+import {  ImageTextWithTitleLayout } from '../../layouts/image_text_widget';
 import { OakSerenityImagesArray, OakSerenityTextArray, OakSerenityTitle } from './oak_serenity';
 import { TheWhiteOpulenceImageArray,TheWhiteOpulenceTextArray, Title } from './the_white_opulence';
 import { UrbanBastionImageArray, UrbanBastionTextArray, UrbanBastionTitle } from './urban_bastion';
 import { Layout3 } from '../../layouts/layout_3';
 import MeetAnExpert  from '../../components/meet_an_expert';
-import { Slider } from '../../components/slider/slider';
-import { TestimonialSliderLayout } from '../../layouts/slider_layout';
 import styled from 'styled-components';
 import Footer  from '../../components/footer';
 import bannerImage from '../../../src/images/designs/nesta_design_200/OPT1C.png'
@@ -77,7 +74,7 @@ class NestaDesign extends React.Component {
             console.log("Previous Indicator Button clicked...!")
             var currentIndex =  this.state.index;
             var previousIndex = 3;
-            if(currentIndex == 0) {
+            if(currentIndex === 0) {
                 previousIndex = 2;
             } else {
                 previousIndex = currentIndex - 1

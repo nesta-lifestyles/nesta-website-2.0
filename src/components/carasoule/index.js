@@ -55,7 +55,7 @@ export const LocalCarousel = (props) => {
     const [index, setIndex] = useState(props.index);
     const handleNext = () => {
       let nextIndex = index+1
-      if(nextIndex ==props.data.length) {
+      if(nextIndex === props.data.length) {
         nextIndex= 0
       }
       setIndex(nextIndex);
@@ -64,16 +64,16 @@ export const LocalCarousel = (props) => {
   
     const handlePrev = () => {
       let prevIndex = index-1
-      if(prevIndex == -1) {
+      if(prevIndex === -1) {
         prevIndex= props.data.length-1
       }
       setIndex(prevIndex);
       props.updateIndex(prevIndex);
     };
   
-    const handleSlideChange = (index) => {
-      setIndex(index);
-    };
+    // const handleSlideChange = (index) => {
+    //   setIndex(index);
+    // };
   
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);

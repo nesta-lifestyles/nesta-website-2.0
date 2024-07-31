@@ -48,11 +48,6 @@ const NameContainer = styled.div`
 const text ="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. Lorem Ipsum has been the industry's standard dummy."
 
 export class Slide extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    
 
     render(){
             return(<StyledLi>

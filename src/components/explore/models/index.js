@@ -1,8 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import imageText from "../../../images/designs/nesta_design_100/100.png"
-import { goToFlorence, useNestaDesignNavigate } from "../../../router/hooks"
-import { initialFlorenceDesignData } from "../../../pages/nesta_design/data/florence"
 import { useNavigate } from "react-router-dom"
 
 const ExploreComponent = styled.div`
@@ -51,6 +48,21 @@ const Button = styled.div`
     }
 `
 
+const TextContainer = styled.div`
+    position: relative;
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 140px;
+    font-size: 20px;
+    font-weight: 600;
+    /* font: 600 20px Poppins, sans-serif; */
+    @media (max-width: 991px) {
+       height: 100%;
+       text-align: end;
+       margin-top:80%;
+    }
+`
+
 const StyledImage = styled.img`
     position: absolute;
     inset: 0;
@@ -73,20 +85,7 @@ const StyledImage = styled.img`
 
 
 
-const TextContainer = styled.div`
-    position: relative;
-    color: #fff;
-    text-transform: capitalize;
-    margin-top: 140px;
-    font-size: 20px;
-    font-weight: 600;
-    /* font: 600 20px Poppins, sans-serif; */
-    @media (max-width: 991px) {
-       height: 100%;
-       text-align: end;
-       margin-top:80%;
-    }
-`
+
 
 export const ExploreModels = (props) => {
     const navigate = useNavigate();

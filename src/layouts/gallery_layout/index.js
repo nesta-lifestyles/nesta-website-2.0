@@ -84,15 +84,7 @@ const ImageContainer = styled.div`
         max-width: 100%; */
     }
 `
-const ImageContainer2 = styled.div`
-    border-radius: 16px;
-    transition: transform 3s;
-    height: max-content;
-    max-height: fit-content;
-    border-collapse: collapse;
-    overflow: hidden;   
-    border-collapse: collapse;
-`
+
 
 
 const FirstImageContainer = styled.div`
@@ -175,11 +167,11 @@ export const GalleryLayout = (props) =>{
 
     const getFirstImage = ()=> {
         let firstImage = document.getElementById("first_image");
-        if(activeIndex==0) {
+        if(activeIndex===0) {
             firstImage.style.boxShadow = '10px 10px 20px rgba(36, 36, 36, 0.5)';
             firstImage.style.border = '2px solid #DCDCDC'
         } else {
-                if(firstImage!=undefined){
+                if(firstImage!==undefined){
                     firstImage.style.boxShadow='none'; 
                     firstImage.style.border='none'; 
                 }
@@ -199,10 +191,10 @@ export const GalleryLayout = (props) =>{
 
     const getSecondImage = ()=> {
         let secondImage = document.getElementById("second_image")
-        if(activeIndex==1 && secondImage) {
+        if(activeIndex===1 && secondImage) {
             secondImage.style.boxShadow = '2px 10px 20px rgba(36, 36, 36, 0.5)'
             secondImage.style.border = '2px solid #DCDCDC'
-        } else if(secondImage!=undefined){
+        } else if(secondImage!==undefined){
             secondImage.style.boxShadow='none'; 
             secondImage.style.border = 'none'
         }
@@ -220,10 +212,10 @@ export const GalleryLayout = (props) =>{
     
     const getThirdImage = ()=> {
         let thirdImage = document.getElementById("third_image");
-        if(activeIndex==2 && thirdImage) {
+        if(activeIndex===2 && thirdImage) {
             thirdImage.style.boxShadow='10px 10px 20px rgba(36, 36, 36, 0.5)'; 
             thirdImage.style.border = '2px solid #DCDCDC'    
-        } else if(thirdImage!=undefined){
+        } else if(thirdImage!==undefined){
             thirdImage.style.boxShadow='none'; 
             thirdImage.style.border='none';
         }
@@ -267,11 +259,11 @@ export const GalleryLayout2 = (props) =>{
 
     const getFirstImage = ()=> {
         let firstImage = document.getElementById("first_image");
-        if(activeIndex==0) {
+        if(activeIndex===0) {
             firstImage.style.boxShadow = '10px 10px 20px rgba(36, 36, 36, 0.5)';
             firstImage.style.border = '2px solid #DCDCDC'
         } else {
-                if(firstImage!=undefined){
+                if(firstImage!==undefined){
                     firstImage.style.boxShadow='none'; 
                     firstImage.style.border='none'; 
                 }
@@ -291,10 +283,10 @@ export const GalleryLayout2 = (props) =>{
 
     const getSecondImage = ()=> {
         let secondImage = document.getElementById("second_image")
-        if(activeIndex==1 && secondImage) {
+        if(activeIndex===1 && secondImage) {
             secondImage.style.boxShadow = '2px 10px 20px rgba(36, 36, 36, 0.5)'
             secondImage.style.border = '2px solid #DCDCDC'
-        } else if(secondImage!=undefined){
+        } else if(secondImage!==undefined){
             secondImage.style.boxShadow='none'; 
             secondImage.style.border = 'none'
         }

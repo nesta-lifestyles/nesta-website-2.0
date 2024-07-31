@@ -1,8 +1,7 @@
 import React from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import styled from "styled-components";
-import { RectangleIndicator } from "../../elements/banner/indicator";
-import { OnlyTitle, Title } from "../../components/banner/title";
+import { OnlyTitle} from "../../components/banner/title";
 
 const StyledBannerDiv = styled.div`
         width: 100%;
@@ -110,17 +109,6 @@ const StyledDiv2 = styled.div`
         }
 `
 
-const DivEnd = styled.div`
-   position: absolute;
-   bottom: 66px;
-   right: 59px;
-   @media (max-width:600px){
-          position: absolute;
-          bottom: 550px;
-          right: 25px;
-          
-    }
-`
 
 const DivText = styled.div`
     position: absolute;
