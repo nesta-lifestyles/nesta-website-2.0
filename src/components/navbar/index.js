@@ -13,13 +13,13 @@ import { Image } from "../../elements/image";
 // import { Text } from "../../elements/text";
 
 const NavBar = styled.nav`
-    position: static;
+    position: fixed;
     top: 0;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
     left: 0;
     background-color:#F5F5F5;
     @media (max-width:600px){
@@ -102,10 +102,9 @@ const MenuLink = styled.div`
     flex-shrink: 1;
     text-decoration: none;
     @media (max-width:600px){
-        position: absolute;
+        position: fixed;
         width: 80%;
         height: 100%;
-        z-index: 10000;
         background-color: black;
         display: flex;
         flex-direction: column;
@@ -230,16 +229,16 @@ const CloseIO = styled.div`
         top: 50px;
         cursor: pointer;
    }
-   /* @media(min-width: 700px) {
+   @media(min-width: 700px) {
         display: none;
-   } */
+   }
 `
 
 
 
 const Navbar=() => {
 
-    const [showNavBar, updateNavBar] = useState(false)
+    const [showNavBar, updateNavBar] = useState(true)
     
     const NavBarHandler = () => {
         updateNavBar(!showNavBar)
