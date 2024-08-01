@@ -20,6 +20,7 @@ const Container = styled.div`
     @media (max-width:600px){
       padding:20px;
       background-color: white;
+      gap: 50px;
     } 
 `
 

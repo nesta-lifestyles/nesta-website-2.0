@@ -28,7 +28,7 @@ const Container = styled.div`
     @media (max-width:600px){
       padding:20px;
       background-color: white;
-      gap:10px;
+      gap:50px;
     } 
 `
 const HandlePreviousDesign = (props) => {
