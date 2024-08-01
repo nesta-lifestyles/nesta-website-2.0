@@ -4,23 +4,27 @@ import logoImage from '../../images/logo/11.png'
 import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
-import invertedLogoImage from '../../images/logo/11.png'
+// import invertedLogoImage from '../../images/logo/11.png'
+import invtedLogoImage from '../../images/logo/invert_logo.png'
 import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
+import XIcon from "../../images/icons/x_svg.svg"
+import { Image } from "../../elements/image";
+import { Text } from "../../elements/text";
 
 const NavBar = styled.nav`
-    position: fixed;
+    position: static;
     top: 0;
-    width: 100%;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     background-color:#F5F5F5;
     @media (max-width:600px){
         background-color: white;
+        width: 100%;
     }
 `
 
@@ -99,20 +103,21 @@ const MenuLink = styled.div`
     flex-shrink: 1;
     text-decoration: none;
     @media (max-width:600px){
-        float: none;
-        position: absolute;
-        text-align: center;
-        display: block;
+        position: fixed;
+        top: 0;
+        right: -30%;
+        display: flex;
+        flex-direction: column;
+        gap:30px;
         background-color: black;
-        height: 400px;
-        border-radius: 5px;
-        right: 10px;    
-        margin-top: 90px;
-        width: 160px;
-        min-width: 80px;
-        /* max-width: 1050px; */
-        max-height: 500px;
-        color: black;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 25%;
+        height: 100%;
+        padding: 6rem 3rem 0;
+        margin-top: 0px;
+        z-index: 10000;
+        transition: right 0.4s;
     }
 `
 Bars.defaultProps={
@@ -135,6 +140,9 @@ const ProductInfoContainer  = styled.div`
         visibility: visible;
         
     }
+    @media (max-width:600px){
+        display: none;
+    }
 `
 
 const MenuItem = styled(Link)`
@@ -149,7 +157,6 @@ const MenuItem = styled(Link)`
     transition: all .35s  ease-out;
     text-decoration: none;
     -webkit-transition: all 0.3s ease 0s; 
-    
     @media (max-width:600px) {            
         margin: 10px;
         color: #FFFFFF;
@@ -201,10 +208,55 @@ const MenuItem = styled(Link)`
         
 `
 
+const CloseIO = styled.div`
+   @media (max-width:600px) {
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        cursor: pointer;
+   }
+   /* @media(min-width: 700px) {
+        display: none;
+   } */
+`
+
+const Button = styled.div`
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    color: black;
+    width: 34px;
+    padding: 5px;
+    height: 34px;
+    font: 400 14px/150% Poppins, sans-serif;
+    background-color: white;
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+    @media (max-width: 991px) {
+        padding: 0 20px;
+    }
+
+    &:hover{
+        transition: 0.35s;
+        /* transform: scale(1.05); */
+        font-weight: 500;
+        text-decoration: dashed;
+        opacity: 1.0;
+        background-color: white;
+        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
+    }
+    
+    &:active{
+        transform: scale(0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+`
+
 
 const Navbar=() => {
 
-    const [showNavBar, updateNavBar] = useState(true)
+    const [showNavBar, updateNavBar] = useState(false)
     
     const NavBarHandler = () => {
         updateNavBar(!showNavBar)
@@ -213,18 +265,18 @@ const Navbar=() => {
     return(<>
         <NavBar>
             <LogoLayout to="/">
-                <LogoLink srcSet={`${invertedLogoImage} 300w, ${invertedLogoImage} 768w, ${invertedLogoImage} 1280w`} />
+                <LogoLink srcSet={`${invtedLogoImage} 300w, ${invtedLogoImage} 768w, ${invtedLogoImage} 1280w`} />
             </LogoLayout>
             <Bars onClick={NavBarHandler} />
         {showNavBar && (<MenuLink className="menu-link">
                 <div>
-                    <MenuItem to='/ville'>Nesta Ville</MenuItem>
+                    <MenuItem to='/ville' onClick={NavBarHandler}>Nesta Ville</MenuItem>
                     <ProductInfoContainer className="ProductInfoContainer">
                         <ProductInfo product_info={ProductInformation}/>
                     </ProductInfoContainer>
                 </div>
                 <div>
-                    <MenuItem to='/design'>Nesta Designs</MenuItem>
+                    <MenuItem to='/design' onClick={NavBarHandler}>Nesta Designs</MenuItem>
                     <ProductInfoContainer className="ProductInfoContainer">
                         <ProductInfo product_info={NestaDesignInformation} />
                     </ProductInfoContainer>
@@ -234,13 +286,13 @@ const Navbar=() => {
                 </div>
                 <div>
                     <MenuItem>Nesta Sense</MenuItem>
-                    <ProductInfoContainer className="ProductInfoContainer">
-                        <ProductInfo product_info={ProductInformation}/>
-                    </ProductInfoContainer>
                 </div>
                 <div>
                     <MenuItem>Nesta Xplorer</MenuItem>         
                 </div>
+                <CloseIO onClick={NavBarHandler}>
+                    <Image width="30px" height="30px" src={XIcon}/>
+                </CloseIO>
             </MenuLink> )}       
             {/* <LoginAlert>
                 <NotificationButton></NotificationButton>

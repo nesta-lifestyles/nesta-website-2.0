@@ -110,7 +110,8 @@ const Column2 = styled.div`
   margin-left: 20px;
   @media (max-width: 991px) {
     width: 100%;
-    margin-left: 10px
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
 

@@ -12,6 +12,9 @@ const StyledH1 = styled.div`
     line-height: 38.4px;
     /* opacity: 0.8; */
     color: ${props => props.color ===undefined?"#1B1E1E":props.color};
+    @media (max-width:600px){
+     font-size: 20px;
+    }
     /* @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);

@@ -63,7 +63,7 @@ const TextContainer = styled.div`
     @media (max-width: 991px) {
        height: 100%;
        text-align: end;
-       margin-top:80%;
+       margin-top:90%;
        font-size: 16px;
     }
 `
