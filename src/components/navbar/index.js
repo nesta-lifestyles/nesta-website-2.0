@@ -37,11 +37,10 @@ const LogoLayout = styled(Link)`
     cursor: pointer;
     @media (max-width:600px){
         right: 20px;
-        height:62px;
+        height:50px;
         margin-right: 70px;
-        max-height: 62px;
+        max-height: 50px;
         border-radius: 50px;
-        margin-right: 70px;
         margin-top: 0px;
         left: 10px;
         top: 11px;
@@ -57,10 +56,10 @@ export const Bars = styled.img`
     max-width: 34px;
     max-height: 34px;
     margin-top: 0px;
-    top: 5px;
+    right: 5px;
     right: 0;
     transform: translate(-100%, 75%);
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     cursor: pointer;
   }
 `;
@@ -103,21 +102,34 @@ const MenuLink = styled.div`
     flex-shrink: 1;
     text-decoration: none;
     @media (max-width:600px){
-        position: fixed;
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        z-index: 10000;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap:30px;
         top: 0;
-        right: -30%;
+        max-width: 80%;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding: 6rem 3rem 0;
+        /* position: absolute;
+        
+        left: 5px;
         display: flex;
         flex-direction: column;
         gap:30px;
         background-color: black;
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        width: 25%;
+        width: 100%;
         height: 100%;
         padding: 6rem 3rem 0;
         margin-top: 0px;
         z-index: 10000;
-        transition: right 0.4s;
+        transition: right 0.4s; */
     }
 `
 Bars.defaultProps={
@@ -160,6 +172,9 @@ const MenuItem = styled(Link)`
     @media (max-width:600px) {            
         margin: 10px;
         color: #FFFFFF;
+        border-bottom-style: solid;
+        border-bottom: 2px;
+        border-bottom-color: #FFFFFF;
     }
 
     &:hover, &:focus {
@@ -211,7 +226,7 @@ const MenuItem = styled(Link)`
 const CloseIO = styled.div`
    @media (max-width:600px) {
         position: absolute;
-        left: 50%;
+        right: 70%;
         top: 50px;
         cursor: pointer;
    }

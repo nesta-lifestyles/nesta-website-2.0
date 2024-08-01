@@ -15,8 +15,8 @@ export default function MeetAnExpert() {
         </Column>
         <Column2>
           <Div3>
-            <H2 value="Meet an Expert" color="white" height="auto" />
-            <Text color="white"  height="auto"  value="Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions">
+            <H2 value="Meet an Expert" width="100%" color="white" height="auto" />
+            <Text color="white"  height="auto" width="100%" value="Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions">
             </Text>
             <Button>Meet Expert</Button>
           </Div3>

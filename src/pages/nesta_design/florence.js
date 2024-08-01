@@ -7,7 +7,7 @@ import { GalleryLayout2 } from "../../layouts/gallery_layout"
 import { initialFlorenceDesignData } from "./data/florence"
 
 const Container = styled.div`
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding: 70px;
     display: flex;
     flex-direction: column;

@@ -11,7 +11,6 @@ import MeetAnExpert from "../../components/meet_an_expert";
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
     padding: 70px;
     display: flex;
     flex-direction: column;

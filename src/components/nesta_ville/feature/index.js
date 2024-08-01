@@ -11,6 +11,9 @@ import { BannerWithTitleLayout } from "../../../layouts/banner_layout"
 
 const TitleContainer =styled.div`
      margin: 40px;
+     @media (max-width:600px){
+        margin: 0px;
+    } 
      /* padding-left: 50px;
      height: 40px; */
 `
@@ -32,7 +35,7 @@ const FeatureContainer = styled.div`
     position: relative;
     
     @media (max-width:600px){
-        gap: 50px;
+        gap: 20px;
         width: 100%;
         overflow: hidden;
     } 
