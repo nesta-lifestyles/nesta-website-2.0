@@ -7,8 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "npm-watch": "^0.13.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
@@ -17,10 +19,19 @@
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"
   },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx"
+    }
+  },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
+    "watch": "npm-watch",
     "eject": "react-scripts eject"
   },
   "browserslist": {

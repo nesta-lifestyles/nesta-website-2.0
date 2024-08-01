@@ -5,6 +5,8 @@ import { NestaDesignInformation } from "../../components/navbar/nav_bar_content"
 import { GalleryLayout } from "../../layouts/gallery_layout";
 import { BannerLayout } from "../../layouts/banner_layout";
 import { NestaDesignHomePageData } from "./data/home";
+import { ProcessLayout } from "../../layouts/process_layout";
+import MeetAnExpert from "../../components/meet_an_expert";
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -36,9 +38,9 @@ export const NestaDesignHomePage = () => {
             <Container>
                     <BannerLayout title={NestaDesignHomePageData.banner.banner_title} src={NestaDesignHomePageData.banner.image} animationflag ={true} OnPrevIndicatorClick={HandlePreviousDesign} onNextIndicatorClick={HandleNextDesign}/>
                     <ExploreModelsLayout models={NestaDesignInformation}/>
-                    {/* <ProcessLayout/> */}
+                    <ProcessLayout/>
                    <GalleryLayout images={NestaDesignHomePageData.gallery}></GalleryLayout>
-                   {/* <MeetAnExpert/> */}
+                   <MeetAnExpert/>
             </Container>
         </>)
 
