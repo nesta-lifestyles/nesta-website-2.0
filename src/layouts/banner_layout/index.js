@@ -251,6 +251,14 @@ const ButtonContainer = styled.div`
           left: 10px;
           bottom: 5px;
     }
+    
+    @media (max-width:400px){
+          display:flex ; 
+          flex-direction:column;
+          gap: 10px;
+          left: 10px;
+          bottom: 5px;
+    }
 `
 
 export const BannerLayout =(props)=>{

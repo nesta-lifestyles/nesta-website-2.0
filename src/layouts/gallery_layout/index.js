@@ -202,7 +202,7 @@ export const GalleryLayout = (props) =>{
 
         return (
             <ThirdImageContainer  id="second_image" onClick={() => updateActiveIndexValue(1)}>
-                        <Image  width= "241px"
+                        <Image  width= "100%"
                         height= "312px"
                         src={props.images[1]}
                         alt="slider image"
@@ -223,7 +223,7 @@ export const GalleryLayout = (props) =>{
 
         return (
             <ThirdImageContainer  id="third_image" onClick={() => updateActiveIndexValue(2)}>
-                <Image  width= "141px"
+                <Image  width= "100%"
             height= "312px"
             src={props.images[2]}
             alt="slider image"
@@ -242,6 +242,7 @@ export const GalleryLayout = (props) =>{
                         {getFirstImage()}
                 </ImageContainer>
                 <SecondImagesLayoutContainer>
+                        {/* {getFirstImage()} */}
                         {getSecondImage()}
                         {getThirdImage()}
                 </SecondImagesLayoutContainer>
