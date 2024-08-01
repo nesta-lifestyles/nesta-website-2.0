@@ -132,6 +132,7 @@ const DivText = styled.div`
           gap: 20px;
           align-content: flex-start;
           margin-bottom: 10px;
+          bottom: 20%;
     }
 `
 
