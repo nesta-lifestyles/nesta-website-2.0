@@ -184,8 +184,11 @@ const transitions = {
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
     margin:24px;
-    @media (max-width: 991px) {
-        
+    @media (max-width:600px){
+      width: 140px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
     }
 
     &:hover{
@@ -216,6 +219,13 @@ const WhiteButton = styled.div`
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
     margin:24px;
+    @media (max-width:600px){
+      width: 140px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+    }
+
     @media (max-width: 991px) {
       margin-left: 0px;
       /* margin-bottom: 24px;
@@ -247,16 +257,8 @@ const ButtonContainer = styled.div`
     @media (max-width:600px){
           display:flex ; 
           flex-direction:row;
-          gap: 10px;
-          left: 10px;
-          bottom: 5px;
-    }
-    
-    @media (max-width:400px){
-          display:flex ; 
-          flex-direction:column;
-          gap: 10px;
-          left: 10px;
+          gap: 5px;
+          left: 20px;
           bottom: 5px;
     }
 `

@@ -40,6 +40,10 @@ const StyledH2 = styled.div`
         transform: translateX(0);
     } */
 /* } */
+
+  @media (max-width:600px){
+     font-size: 16px;
+  }
 `
 
 
