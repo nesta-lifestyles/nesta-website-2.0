@@ -3,7 +3,7 @@ import styled from "styled-components"
 import firstTestImage from"../../images/designs/process.png"
 import { Image } from "../../elements/image"
 import processImage from "../../images/mobile/process_2.png"
-import { BrowserView, isMobile, MobileView } from "react-device-detect"
+import { isMobile } from "react-device-detect"
 
 const ProcessContainer = styled.div`
 `
