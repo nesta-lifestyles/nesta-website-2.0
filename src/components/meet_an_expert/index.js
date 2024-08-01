@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import meetAndExpert from "./meet_expert_img.svg"
+import { H2, Text } from "../../elements/text";
 
 export default function MeetAnExpert() {
   return (
@@ -14,10 +15,9 @@ export default function MeetAnExpert() {
         </Column>
         <Column2>
           <Div3>
-            <Div4>Meet an Expert</Div4>
-            <Div5>
-              Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions
-            </Div5>
+            <H2 value="Meet an Expert" color="white" height="auto" />
+            <Text color="white"  height="auto"  value="Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions">
+            </Text>
             <Button>Meet Expert</Button>
           </Div3>
         </Column2>
@@ -39,9 +39,12 @@ const Button = styled.div`
     border: 1px solid black;
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
-
-    @media (max-width: 991px) {
-        /* padding: 0 20px; */
+    @media (max-width:600px){
+      width: 120px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
     }
 
     &:hover{
@@ -107,6 +110,7 @@ const Column2 = styled.div`
   margin-left: 20px;
   @media (max-width: 991px) {
     width: 100%;
+    margin-left: 10px
   }
 `;
 
@@ -119,29 +123,13 @@ const Div3 = styled.div`
   align-items: start;
   justify-content: left;
   gap:20px;
+  text-align: left;
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
+    text-overflow: wrap;
+    gap:0px;
+    padding: 0px;
   }
 `;
 
-const Div4 = styled.div`
-  color: #fff;
-  text-transform: capitalize;
-  font: 500 32px/160% Poppins, sans-serif;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const Div5 = styled.div`
-  color: rgba(255, 255, 255, 0.8);
-  text-transform: capitalize;
-  margin-top: 4px;
-  overflow: auto;
-  text-align: start;
-  font: 300 20px/32px Poppins, sans-serif;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;

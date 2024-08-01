@@ -29,8 +29,12 @@ const Button = styled.div`
     border: 1px solid rgba(255, 255, 255, 1);
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
-    @media (max-width: 991px) {
-
+    @media (max-width:600px){
+      width: 140px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
     }
 
     &:hover{
@@ -60,6 +64,7 @@ const TextContainer = styled.div`
        height: 100%;
        text-align: end;
        margin-top:80%;
+       font-size: 16px;
     }
 `
 

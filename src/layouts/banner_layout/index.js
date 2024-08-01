@@ -132,7 +132,8 @@ const DivText = styled.div`
           gap: 20px;
           align-content: flex-start;
           margin-bottom: 10px;
-          bottom: 20%;
+          bottom: 15%;
+          left: 20px;
     }
 `
 
@@ -189,7 +190,9 @@ const transitions = {
       height: 53px;
       margin: 10px;
       margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
     }
+    
 
     &:hover{
         transition: 0.35s;
@@ -224,6 +227,7 @@ const WhiteButton = styled.div`
       height: 53px;
       margin: 10px;
       margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
     }
 
     @media (max-width: 991px) {

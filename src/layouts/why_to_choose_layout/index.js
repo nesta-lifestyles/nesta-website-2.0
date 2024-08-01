@@ -44,6 +44,10 @@ const ListContainer = styled.li`
     font-size: 24px;
     text-align: left;
     padding-top: 10px;
+    @media (max-width: 600px) {
+      font-weight: 300;
+      font-size: 10px;
+    }
 `
 
 export const WhyToChooseLayout =(props)=> {
