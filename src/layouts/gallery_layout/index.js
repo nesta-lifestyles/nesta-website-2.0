@@ -167,11 +167,12 @@ export const GalleryLayout = (props) =>{
 
     const getFirstImage = ()=> {
         let firstImage = document.getElementById("first_image");
-        if(activeIndex===0) {
+        if(firstImage && activeIndex===0) {
             firstImage.style.boxShadow = '10px 10px 20px rgba(36, 36, 36, 0.5)';
             firstImage.style.border = '2px solid #DCDCDC'
         } else {
-                if(firstImage!==undefined){
+                if(firstImage){
+                    console.log("firstImage Style"+firstImage)
                     firstImage.style.boxShadow='none'; 
                     firstImage.style.border='none'; 
                 }
@@ -194,7 +195,7 @@ export const GalleryLayout = (props) =>{
         if(activeIndex===1 && secondImage) {
             secondImage.style.boxShadow = '2px 10px 20px rgba(36, 36, 36, 0.5)'
             secondImage.style.border = '2px solid #DCDCDC'
-        } else if(secondImage!==undefined){
+        } else if(secondImage){
             secondImage.style.boxShadow='none'; 
             secondImage.style.border = 'none'
         }
@@ -215,7 +216,7 @@ export const GalleryLayout = (props) =>{
         if(activeIndex===2 && thirdImage) {
             thirdImage.style.boxShadow='10px 10px 20px rgba(36, 36, 36, 0.5)'; 
             thirdImage.style.border = '2px solid #DCDCDC'    
-        } else if(thirdImage!==undefined){
+        } else if(thirdImage){
             thirdImage.style.boxShadow='none'; 
             thirdImage.style.border='none';
         }
@@ -263,7 +264,8 @@ export const GalleryLayout2 = (props) =>{
             firstImage.style.boxShadow = '10px 10px 20px rgba(36, 36, 36, 0.5)';
             firstImage.style.border = '2px solid #DCDCDC'
         } else {
-                if(firstImage!==undefined){
+                if(firstImage){
+                    console.log("firstImage Style"+firstImage.style)
                     firstImage.style.boxShadow='none'; 
                     firstImage.style.border='none'; 
                 }
@@ -286,7 +288,7 @@ export const GalleryLayout2 = (props) =>{
         if(activeIndex===1 && secondImage) {
             secondImage.style.boxShadow = '2px 10px 20px rgba(36, 36, 36, 0.5)'
             secondImage.style.border = '2px solid #DCDCDC'
-        } else if(secondImage!==undefined){
+        } else if(secondImage){
             secondImage.style.boxShadow='none'; 
             secondImage.style.border = 'none'
         }
