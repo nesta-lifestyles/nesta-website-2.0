@@ -17,7 +17,7 @@ const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
     position: relative;
-    /* margin-top: 105px; */
+    margin-top: 105px;
     padding:70px;
     display: flex;
     flex-direction: column;

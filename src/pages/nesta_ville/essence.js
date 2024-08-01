@@ -8,7 +8,7 @@ import { initialEssenceVillaData } from "./data/essence"
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    /* margin-top: 105px; */
+    margin-top: 105px;
     border-radius: 16px;
     padding:70px;
 
