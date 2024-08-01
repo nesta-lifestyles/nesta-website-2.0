@@ -10,7 +10,7 @@ import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
 import XIcon from "../../images/icons/x_svg.svg"
 import { Image } from "../../elements/image";
-import { Text } from "../../elements/text";
+// import { Text } from "../../elements/text";
 
 const NavBar = styled.nav`
     position: static;
