@@ -5,7 +5,7 @@ import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
 import invertedLogoImage from '../../images/logo/11.png'
-// import invtedLogoImage from '../../images/logo/invert_logo.png'
+import moibleNestaLogo from '../../images/logo/logo_white.svg'
 import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
 import XIcon from "../../images/icons/x_svg.svg"
@@ -236,12 +236,23 @@ const CloseIO = styled.div`
    }
 `
 
+const GetLogoImage =()=>{
+    if(isMobile){
+        return moibleNestaLogo
+    } else {
+        return invertedLogoImage
+    }
+}
 
 
 const Navbar=() => {
 
-    const [showNavBar, updateNavBar] = useState(true)
-    
+    var menuFlag = true
+    if(isMobile){
+        menuFlag = false
+    }
+
+    const [showNavBar, updateNavBar] = useState(menuFlag)
     const NavBarHandler = () => {
         if(isMobile) {
             updateNavBar(!showNavBar)
@@ -252,7 +263,7 @@ const Navbar=() => {
     return(<>
         <NavBar>
             <LogoLayout to="/">
-                <LogoLink srcSet={`${invertedLogoImage} 300w, ${invertedLogoImage} 768w, ${invertedLogoImage} 1280w`} />
+                <LogoLink src={GetLogoImage()} />
             </LogoLayout>
             <Bars onClick={NavBarHandler} />
         {showNavBar && (<MenuLink className="menu-link">

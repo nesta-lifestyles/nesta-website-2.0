@@ -6,10 +6,12 @@ export default function Footer() {
   return (
     <Div>
       <Div2>
+        <IconDiv>
         <Img
           loading="lazy"
           srcSet={Logo}
-        />
+        />          
+        </IconDiv>
         <Div3>
           <Div4>
             <Column>
@@ -47,7 +49,15 @@ export default function Footer() {
           <Div25 />
           <Div26>do not sell my personal information</Div26>
         </Div21>
+        <div>
+        <IconDiv2>
+        <Img
+          loading="lazy"
+          srcSet={Logo}
+        />          
+        </IconDiv2>
         <Div27>© 2022 Nesta Company</Div27>
+        </div>
       </Div20>
     </Div>
   );
@@ -60,6 +70,9 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 72px 0;
+  @media (max-width: 991px) {
+    padding-bottom: 210px;
+  }
 `;
 
 const Div2 = styled.div`
@@ -87,6 +100,7 @@ const Div3 = styled.div`
   padding: 0 20px;
   @media (max-width: 991px) {
     max-width: 100%;
+    padding: 0px;
   }
 `;
 
@@ -97,6 +111,7 @@ const Div4 = styled.div`
     flex-direction: column;
     align-items: stretch;
     gap: 0px;
+    text-align: left;
   }
 `;
 
@@ -105,9 +120,10 @@ const Column = styled.div`
   flex-direction: column;
   line-height: normal;
   width: 30%;
-  margin-left: 0px;
+  
   @media (max-width: 991px) {
     width: 100%;
+    margin-left: 20px;
   }
 `;
 
@@ -120,7 +136,8 @@ const Div5 = styled.div`
   text-transform: capitalize;
   line-height: 164%;
   @media (max-width: 991px) {
-    margin-top: 40px;
+    /* text-align: left; */
+
   }
 `;
 
@@ -262,7 +279,11 @@ const Div20 = styled.div`
   @media (max-width: 991px) {
     max-width: 100%;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 0px;
+    gap: 70px;
+    padding: 0px;
+    justify-content: center;
+    text-align: center;
   }
 `;
 
@@ -271,6 +292,12 @@ const Div21 = styled.div`
   gap: 11px;
   @media (max-width: 991px) {
     flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    gap:24px;
   }
 `;
 
@@ -285,6 +312,9 @@ const Div23 = styled.div`
   background-color: rgba(255, 255, 255, 0.11);
   width: 1px;
   height: 23px;
+  @media (max-width: 600px){
+    display: none;
+  }
 `;
 
 const Div24 = styled.div`
@@ -298,6 +328,9 @@ const Div25 = styled.div`
   background-color: rgba(255, 255, 255, 0.11);
   width: 1px;
   height: 23px;
+  @media (max-width: 600px){
+    display: none;
+  }
 `;
 
 const Div26 = styled.div`
@@ -308,3 +341,15 @@ const Div27 = styled.div`
   font-family: Outfit, sans-serif;
 `;
 
+
+const IconDiv = styled.div`
+  @media(max-width:600px) {
+      display: none;
+  }
+`
+
+const IconDiv2 = styled.div`
+  @media(min-width:600px) {
+      display: none;
+  }
+`
