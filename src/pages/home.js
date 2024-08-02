@@ -39,7 +39,6 @@ const MainContainer = styled.div`
     }
 `
 
-const imageEngine = "https://pir4yw3w.dev.cdn.imgeng.in"
 
 
 class NestaHomePage extends React.Component {
@@ -48,7 +47,7 @@ class NestaHomePage extends React.Component {
         return (
             <MainContainer>
             <Container>
-                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={imageEngine} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} onNextIndicatorClick={this.HandleNextDesign}/>
+                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={first} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} onNextIndicatorClick={this.HandleNextDesign}/>
             </Container>
             <Container style={{backgroundColor: "white"}}>
                     <ImageTextWithTitleLayout bg_color="white" image={first} title="Uncover your Unique" text="Feeling Lost in Your Style Choices? Let Nesta Guide You to Discover Your Design" />

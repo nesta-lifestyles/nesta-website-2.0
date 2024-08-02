@@ -39,6 +39,10 @@ const EntirePageContainer = styled.div`
 export const MainContainerDiv = styled.div`
   margin-left: 70px;
   margin-right: 73px;
+  @media (max-width:600px){
+      margin-left: 0px;
+      margin-right: 0px;
+  }
 `
 
 const ContentContainer = styled.div`
