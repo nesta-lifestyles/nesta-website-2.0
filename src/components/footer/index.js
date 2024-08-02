@@ -107,11 +107,12 @@ const Div3 = styled.div`
 const Div4 = styled.div`
   gap: 20px;
   display: flex;
+  text-align: left;
   @media (max-width: 991px) {
     flex-direction: column;
     align-items: stretch;
     gap: 0px;
-    text-align: left;
+    
   }
 `;
 

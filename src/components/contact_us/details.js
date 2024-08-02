@@ -8,6 +8,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 600px) {
+        flex-direction: column;  
+    }
 `
 
 

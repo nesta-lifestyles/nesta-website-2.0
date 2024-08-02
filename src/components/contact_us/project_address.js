@@ -13,7 +13,10 @@ const Container = styled.div`
 const RowContainer =styled.div`
     display: flex;
     flex-direction: row;
-    gap:10px
+    gap:10px;
+    @media (max-width: 600px) {
+        flex-direction: column;  
+    }
 `
 export const ProjectaAddressDetails = (props) => {
     return(<div>

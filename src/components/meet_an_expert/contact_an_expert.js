@@ -23,10 +23,12 @@ const Button = styled.div`
     background-color: #1B1E1E;
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
-    @media (max-width: 991px) {
-        padding: 0 20px;
+    @media (max-width:600px){
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
     }
-
     &:hover{
         transition: 0.35s;
         /* transform: scale(1.05); */

@@ -9,22 +9,26 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 `
 
 const RowContainer =styled.div`
     display: flex;
     flex-direction: row;
-    gap:10px
+    gap:10px;
+    @media (max-width: 600px) {
+        flex-direction: column;  
+    }
 `
 
 
 export const PersonalDetails = (props) => {
     return(<div> 
-        <Text width="auto" height="20px" value="Personal Details" />
+        <Text height="20px" width="100%" value="Personal Details" />
         <Container>
                 <RowContainer>
-                    <InputTextBox placeholder="Name"  /> 
-                    <InputTextBox placeholder="Email"  />       
+                    <InputTextBox placeholder="Name"  width="100%"/> 
+                    <InputTextBox placeholder="Email" width="100%" />       
                 </RowContainer>
                 <RowContainer>
                     <InputTextBox width="100px" placeholder="code" />

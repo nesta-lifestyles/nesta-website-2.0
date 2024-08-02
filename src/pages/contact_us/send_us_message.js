@@ -39,6 +39,11 @@ const Container2 = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: column;
+    @media(max-width:600px) {
+        width: 100%;
+        padding: 10px;
+        gap: 10px;
+    }
 `
 
 const Container3 = styled.div`
@@ -68,7 +73,7 @@ export const SendUsAMessage = (props) => {
             <Container4>
             <Container2>
                 <Container3>
-                    <H2 value="Send Us A Message" height="40px"></H2>
+                    <H2 value="Send Us A Message" height="40px"  width="350px"></H2>
                 </Container3>
                 <Divider/>
                 <ContactUs handleCancel={handleCancelButton}/>

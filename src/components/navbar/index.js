@@ -6,11 +6,13 @@ import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
 import invertedLogoImage from '../../images/logo/11.png'
 import moibleNestaLogo from '../../images/logo/logo_white.svg'
+import moibleMenuOpenNestaLogo from '../../images/logo/logo_secondary.svg'
 import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
 import XIcon from "../../images/icons/x_svg.svg"
 import { Image } from "../../elements/image";
 import { isMobile } from "react-device-detect";
+import { Text } from "../../elements/text";
 
 // import { Text } from "../../elements/text";
 
@@ -37,6 +39,7 @@ const LogoLayout = styled(Link)`
     margin-top: 25px;
     padding:5px;
     cursor: pointer;
+    align-items: left;
     @media (max-width:600px){
         right: 20px;
         height:50px;
@@ -47,6 +50,24 @@ const LogoLayout = styled(Link)`
         left: 10px;
         top: 11px;
         background-color: #1B1E1E;
+    }
+`
+const LogoLayout2 = styled(Link)`
+    left:  45.6px;
+    height: 46px;
+    margin-top: 25px;
+    padding:5px;
+    cursor: pointer;
+    @media (max-width:600px){
+        right: 20px;
+        height:50px;
+        margin-right: 70px;
+        max-height: 50px;
+        border-radius: 50px;
+        margin-top: 0px;
+        left: 10px;
+        top: 11px;
+        /* background-color: #1B1E1E; */
     }
 `
 export const Bars = styled.img`
@@ -66,6 +87,22 @@ export const Bars = styled.img`
   }
 `;
 
+const LogoLink2 = styled.img`
+    /* background-color:green; */
+    width: 38.8px;
+    height: 56px;
+    max-width: 38.8px;
+    max-height: 56px;
+    padding:5px;
+    cursor: pointer;
+    @media (max-width:600px){
+        /* position: absolute; */
+        /* left: 23px;
+        top:13px; */
+        width: 56px;
+        height: 56px;
+    }
+`
 
 
 const LogoLink = styled.img`
@@ -79,7 +116,7 @@ const LogoLink = styled.img`
     @media (max-width:600px){
         position: absolute;
         left: 23px;
-        top:13px;
+        top:8px;
         width: 34px;
         height: 34px;
     }
@@ -115,7 +152,8 @@ const MenuLink = styled.div`
         max-width: 80%;
         margin-top: 0px;
         margin-left: 0px;
-        padding: 6rem 3rem 0;
+        padding-left: 15px;
+        padding-top: 30px;
         /* position: absolute;
         
         left: 5px;
@@ -171,8 +209,10 @@ const MenuItem = styled(Link)`
     text-decoration: none;
     -webkit-transition: all 0.3s ease 0s; 
     @media (max-width:600px) {            
-        margin: 10px;
-        color: #FFFFFF;
+        /* margin-right: 10px; */
+        padding-left: 10px;
+        font-size: 16px;
+        color: #878383;
         border-bottom-style: solid;
         border-bottom: 2px;
         border-bottom-color: #FFFFFF;
@@ -186,8 +226,11 @@ const MenuItem = styled(Link)`
         line-height: 21px;
         transition: all .35s ease;
         @media (max-width:600px) {            
-            margin: 10px;
+            /* padding: 10px; */
             color: #FFFFFF;
+            border-left: 1px;
+            border-left-color: #FFFFFF;
+            border-left-style: solid;
         }
     }
     &:hover+.ProductInfoContainer{
@@ -208,8 +251,11 @@ const MenuItem = styled(Link)`
         animation: animate .85s;
         
         @media (max-width:600px) {            
-            margin: 10px;
+            /* padding: 10px; */
             color: #FFFFFF;
+            border-left: 1px;
+            border-left-color: #FFFFFF;
+            border-left-style: solid;
         }
     }
     @keyframes animate {
@@ -226,14 +272,53 @@ const MenuItem = styled(Link)`
 
 const CloseIO = styled.div`
    @media (max-width:600px) {
-        position: absolute;
+        /* position: absolute;
         right: 70%;
-        top: 50px;
+        top: 50px; */
+        padding-top: 10px;
         cursor: pointer;
    }
    @media(min-width: 700px) {
         display: none;
    }
+`
+
+const Divider = styled.div`
+    @media(max-width: 600px){
+        height: 1px;
+        width: 45%;
+        background-color: #878383;
+        /* margin-left: 47px;
+        margin-right: 10px; */
+    }
+`
+
+const TopContainer =styled.div`
+   @media(min-width: 600px) {
+        display: none;
+   }
+   @media(max-width: 600px){display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 40%;
+    padding-left:20px;
+    };
+
+`
+
+const BottomContainer =styled.div`
+    @media (min-width:600px){
+        display: none;
+    }
+
+    @media (max-width:600px) {
+        display: flex;
+        width: 15%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 const GetLogoImage =()=>{
@@ -259,6 +344,8 @@ const Navbar=() => {
         }
         
     }
+
+
     
     return(<>
         <NavBar>
@@ -267,6 +354,15 @@ const Navbar=() => {
             </LogoLayout>
             <Bars onClick={NavBarHandler} />
         {showNavBar && (<MenuLink className="menu-link">
+            <TopContainer >
+                <LogoLayout2 to="/" onClick={NavBarHandler}>
+                    <LogoLink2 src={moibleMenuOpenNestaLogo}/>
+                </LogoLayout2>
+                <CloseIO onClick={NavBarHandler}>
+                    <Image width="30px" height="30px" src={XIcon}/>
+                </CloseIO>
+            </TopContainer>
+            <Divider /> 
                 <div>
                     <MenuItem to='/ville' onClick={NavBarHandler}>Nesta Ville</MenuItem>
                     <ProductInfoContainer className="ProductInfoContainer">
@@ -288,10 +384,10 @@ const Navbar=() => {
                 <div>
                     <MenuItem>Nesta Xplorer</MenuItem>         
                 </div>
-                <CloseIO onClick={NavBarHandler}>
-                    <Image width="30px" height="30px" src={XIcon}/>
-                </CloseIO>
-            </MenuLink> )}       
+                <Divider />
+                <BottomContainer> <Text value="© 2024 Nesta Company" color="#878383" width="200px"/></BottomContainer>       
+            </MenuLink> )}
+            
             {/* <LoginAlert>
                 <NotificationButton></NotificationButton>
                 <ShoppingCartButton></ShoppingCartButton>

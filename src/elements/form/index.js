@@ -21,6 +21,7 @@ const StyledInputTextBox = styled.input`
         width: 100%;
         
    }
+   
     &:focus {
         outline: none;
         /* border: 2px solid black;

@@ -13,6 +13,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SendUsAMessage } from "../contact_us/send_us_message";
 import { ProductInformation } from "../../components/navbar/nav_bar_content";
 import { MainContainerDiv } from "../../App";
+import { ProcessLayout } from "../../layouts/process_layout";
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -97,7 +98,7 @@ class NestaVilleHomePage extends React.Component{
                     <div ref={this.section1Ref}>
                         <ExploreModelsLayout models={ProductInformation}/>
                     </div>
-                    {/* <ProcessLayout/> */}
+                    <ProcessLayout />
                     <NestaVilleFeatures />
                     <GalleryLayout images={NestavilleHomePageData.gallery}></GalleryLayout>
                     <MeetAnExpert/>

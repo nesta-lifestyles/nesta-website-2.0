@@ -12,6 +12,9 @@ const Container = styled.div`
     height: auto;
     width: 804px;
     background-color: white;
+    @media (max-width: 600px) {
+        width: auto;
+    }
     /* border-radius: 17px; */
 `
 

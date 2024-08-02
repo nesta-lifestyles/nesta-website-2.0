@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { ExploreModelsLayout } from "../../layouts/explore_models_layout";
 import { NestaDesignInformation } from "../../components/navbar/nav_bar_content";
@@ -36,10 +36,24 @@ const HandleNextDesign = (props) => {
 
 
 export const NestaDesignHomePage = () => {
+    const myRef = useRef(null);
+   
+    const scrollToSection = (sectionRef, sectionId) => {
+        window.history.pushState(null, null, `#${sectionId}`);
+        console.log("SCROLL TO SECTIONS"+sectionRef)
+        window.scrollTo({
+            top: sectionRef.current.offsetTop,
+            behavior: 'smooth',
+        });
+    };
+
     return(<MainContainerDiv>
             <Container>
-                    <BannerLayout title={NestaDesignHomePageData.banner.banner_title} src={NestaDesignHomePageData.banner.image} animationflag ={true} OnPrevIndicatorClick={HandlePreviousDesign} onNextIndicatorClick={HandleNextDesign}/>
-                    <ExploreModelsLayout models={NestaDesignInformation}/>
+                    <BannerLayout title={NestaDesignHomePageData.banner.banner_title} src={NestaDesignHomePageData.banner.image} animationflag ={true} 
+                    OnPrevIndicatorClick={HandlePreviousDesign} KnowMoreHandler={() => scrollToSection(myRef, "models")} onNextIndicatorClick={HandleNextDesign}/>
+                    <div ref={myRef}>
+                        <ExploreModelsLayout models={NestaDesignInformation}/>
+                    </div>
                     <ProcessLayout/>
                    <GalleryLayout images={NestaDesignHomePageData.gallery}></GalleryLayout>
                    <MeetAnExpert/>
