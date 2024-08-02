@@ -1,8 +1,8 @@
-import bannerImage from "../../../images/ville/200/banner_11.png"
-import characteristics1 from "../../../images/ville/200/characteristics_1.png"
-import characteristics2 from "../../../images/ville/200/characteristics_2.png"
-import characteristics3 from "../../../images/ville/200/characteristics_3.png"
-import secondaryBanner1 from "../../../images/ville/200/banner_2_1.png"
+import bannerImage from "../../../images/ville/200/banner_11.avif"
+import characteristics1 from "../../../images/ville/200/characteristics_1.avif"
+import characteristics2 from "../../../images/ville/200/characteristics_2.avif"
+import characteristics3 from "../../../images/ville/200/characteristics_3.avif"
+import secondaryBanner1 from "../../../images/ville/200/banner_2_1.avif"
 
 
 const banner = {

@@ -1,18 +1,18 @@
-import bannerImage from "../../../images/ville/201/banner_11.png"
-import characteristics1 from "../../../images/ville/201/characteristics_1.png"
-import characteristics2 from "../../../images/ville/201/characteristics_2.png"
-import characteristics3 from "../../../images/ville/201/characteristics_3.png"
+import bannerImage from "../../../images/ville/201/banner_11.avif"
+import characteristics1 from "../../../images/ville/201/characteristics_1.avif"
+import characteristics2 from "../../../images/ville/201/characteristics_2.avif"
+import characteristics3 from "../../../images/ville/201/characteristics_3.avif"
 
-import comfort1 from "../../../images/ville/201/comfort_1.png"
-import comfort2 from "../../../images/ville/201/comfort_2.png"
-import comfort3 from "../../../images/ville/201/comfort_3.png"
+import comfort1 from "../../../images/ville/201/comfort_1.avif"
+import comfort2 from "../../../images/ville/201/comfort_2.avif"
+import comfort3 from "../../../images/ville/201/comfort_3.avif"
 
-import temperature1 from "../../../images/ville/201/temperature_1.png"
-import temperature2 from "../../../images/ville/201/temperature_2.png"
-import temperature3 from "../../../images/ville/201/temperature_3.png"
+import temperature1 from "../../../images/ville/201/temperature_1.avif"
+import temperature2 from "../../../images/ville/201/temperature_2.avif"
+import temperature3 from "../../../images/ville/201/temperature_3.avif"
 
-import secondaryBanner1 from "../../../images/ville/201/banner_2_1.png"
-import secondaryBanner2 from "../../../images/ville/201/banner_2_2.png"
+import secondaryBanner1 from "../../../images/ville/201/banner_2_1.avif"
+import secondaryBanner2 from "../../../images/ville/201/banner_2_2.avif"
 
 const banner = {
     "image":bannerImage,

@@ -20,6 +20,7 @@ import NestaVilleWeimar from './pages/nesta_ville/weimar';
 import { ContactUsPage } from './pages/contact_us';
 import {  ContactAnExpertPage } from './pages/contact_an_expert';
 import { ScheduleCallAgent } from './pages/contact_us/schedule_call';
+import Footer from './components/footer';
 
 const EntirePageContainer = styled.div`
     /* padding-left: 44px;
@@ -35,9 +36,14 @@ const EntirePageContainer = styled.div`
     } */
 `
 
+export const MainContainerDiv = styled.div`
+  margin-left: 70px;
+  margin-right: 73px;
+`
+
 const ContentContainer = styled.div`
-    margin-left: 70px;
-    margin-right: 73px;
+    /* margin-left: 70px;
+    margin-right: 73px; */
     display: flex;
     flex-direction: column;
     gap: 100px;
@@ -96,7 +102,7 @@ function App() {
               <Route path='/contact-an-expert' Component={ContactAnExpertPage} />
               <Route path='/schduler-call-with-an-expert' Component={ScheduleCallAgent} />
           </Routes>  
-          {/* <Footer/>    */}
+          <Footer/>   
         </ContentContainer>
        </Router>
        

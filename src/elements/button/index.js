@@ -31,6 +31,13 @@ const StyledWhiteButton = styled.button`
     border-radius: 8px;
     gap: 10px;
     border-color: #FFFFFF;
+    @media (max-width:600px){
+      width: 140px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
+    }
 `
 
 const StyledRevertButton = styled.button`
@@ -48,6 +55,13 @@ const StyledRevertButton = styled.button`
     border-radius: 8px;
     gap: 10px;
     border-color: #FFFFFF;
+    @media (max-width:600px){
+      width: 140px;
+      height: 53px;
+      margin: 10px;
+      margin-left: 0px;
+      font: 400 12px/150% Poppins, sans-serif;
+    }
 `
 
 const Text =styled.div`

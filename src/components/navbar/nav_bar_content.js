@@ -8,18 +8,18 @@
 
 
 
-import ville100 from "../../images/ville/100/banner.png"
+import ville100 from "../../images/ville/100/banner.avif"
 import ville101 from "../../images/ville/101/banner.png"
-import ville102 from "../../images/ville/102/banner.png"
-import ville200 from "../../images/ville/200/banner.png"
-import ville201 from "../../images/ville/201/banner.jpg"
-import ville202 from "../../images/ville/202/banner.jpg"
-import ville203 from "../../images/ville/203/banner.jpg"
+import ville102 from "../../images/ville/102/banner.avif"
+import ville200 from "../../images/ville/200/banner.avif"
+import ville201 from "../../images/ville/201/banner.avif"
+import ville202 from "../../images/ville/202/banner.avif"
+import ville203 from "../../images/ville/203/banner.avif"
 
-import design100 from "../../images/designs/nesta_design_100/100.png"
-import design101 from "../../images/designs/nesta_design_101/101.png"
-import design102 from "../../images/designs/nesta_design_102/102.png"
-import design103 from "../../images/designs/nesta_design_103/103.png"
+import design100 from "../../images/designs/nesta_design_100/100.avif"
+import design101 from "../../images/designs/nesta_design_101/101.avif"
+import design102 from "../../images/designs/nesta_design_102/102.avif"
+import design103 from "../../images/designs/nesta_design_103/103.avif"
 
 export const ProductInformation = [
     {

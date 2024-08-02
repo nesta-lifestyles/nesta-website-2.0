@@ -5,6 +5,8 @@ import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { WhyToChoose } from "../../components/nesta_design/why_to_choose"
 import { GalleryLayout2 } from "../../layouts/gallery_layout"
 import { initialFlorenceDesignData } from "./data/florence"
+import MeetAnExpert from "../../components/meet_an_expert"
+import { MainContainerDiv } from "../../App"
 
 const Container = styled.div`
     margin-top: 105px;
@@ -37,15 +39,18 @@ class NestaDesignFlorence extends React.Component {
 
     render(){
         return( 
-        <Container>
-            <BannerComponent banner={this.state.banner}/>
-            <WeimarCharacteristics characteristics={this.state.inspiration}/>
-            <DivGap>
-                <GalleryLayout2 images={this.state.gallery}/>
-                <WhyToChoose whyToChoose={this.state.whyToChoose}/>
-            </DivGap>
-            {/* <MeetAnExpert/> */}
-        </Container>)
+            <MainContainerDiv>
+                <Container>
+                    <BannerComponent banner={this.state.banner}/>
+                    <WeimarCharacteristics characteristics={this.state.inspiration}/>
+                    <DivGap>
+                        <GalleryLayout2 images={this.state.gallery}/>
+                        <WhyToChoose whyToChoose={this.state.whyToChoose}/>
+                    </DivGap>
+                    <MeetAnExpert/>
+                </Container>
+            </MainContainerDiv>
+        )
     }
 }
 

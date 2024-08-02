@@ -1,7 +1,7 @@
-import homeBanner from "../../../images/ville/202/banner.jpg"
-import firstImage from "../../../images/ville/203/banner_11.png"
-import secondImage from "../../../images/ville/203/banner_2_1.png"
-import thirdImage from "../../../images/ville/203/banner_2_2.jpg"
+import homeBanner from "../../../images/ville/202/banner.avif"
+import firstImage from "../../../images/ville/203/banner_11.avif"
+import secondImage from "../../../images/ville/203/banner_2_1.avif"
+import thirdImage from "../../../images/ville/203/banner_2_2.avif"
 
 const banner = {
     "image":homeBanner,

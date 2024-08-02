@@ -12,6 +12,7 @@ import { ScheduleCallAgent } from "../contact_us/schedule_call";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SendUsAMessage } from "../contact_us/send_us_message";
 import { ProductInformation } from "../../components/navbar/nav_bar_content";
+import { MainContainerDiv } from "../../App";
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -89,7 +90,7 @@ class NestaVilleHomePage extends React.Component{
             })
         };
 
-        return(<div >
+        return(<MainContainerDiv >
             <Container id="main_container">
                     <BannerLayout title={NestavilleHomePageData.banner.banner_title} src={NestavilleHomePageData.banner.image} animationflag ={true} OnPrevIndicatorClick={HandlePreviousDesign} onNextIndicatorClick={HandleNextDesign}
                     contactUsHandler={contactUsHandler} KnowMoreHandler={() => this.scrollToSection(this.section1Ref, "models")}/>
@@ -141,7 +142,7 @@ class NestaVilleHomePage extends React.Component{
                     </CSSTransition>)}
                     </TransitionGroup>
             </Container>
-    </div>)
+    </MainContainerDiv>)
 }
 }
 

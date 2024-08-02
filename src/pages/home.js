@@ -1,60 +1,63 @@
 import React from 'react';
-import bannerImage from '../../src/images/designs/nesta_design_200/OPT1C.png'
-import first from '../../src/images/designs/nesta_design_200/OPT1C.png'
+// import bannerImage from '../../src/images/designs/nesta_design_200/OPT1C.png'
+import first from '../../src/images/designs/nesta_design_200/OPT1C.avif'
 import reimage from '../../src/images/designs/reimage.png'
-import relaxNestaImage from '../../src/images/designs/nesta_design_102/banner.png'
+import relaxNestaImage from '../../src/images/designs/nesta_design_102/banner.avif'
 import { ImageTextWithTitleLayout } from '../layouts/image_text_widget';
 import { TextWithTitleImageLayout } from '../layouts/text_image_layout';
 import { Banner } from '../components/banner';
 import styled from 'styled-components';
 import MeetAnExpert from '../components/meet_an_expert';
-import Footer from '../components/footer';
 
 const Container = styled.span`
     display: flex;
-    flex-direction: column;
-    /* margin-left: 75px; */
-        padding-left: 75px;
-        padding-right: 75px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    /* background-color: white; */
-`
-
-const FooterContainer = styled.span`
-    display: flex;
-    flex-direction: column;
-    /* margin-left: 75px; */
-        padding-left: 27px;
-        padding-right:27px;
-        padding-top: 50px;
-        /* padding-bottom: 50px; */
-    /* background-color: white; */
-`
-
-
-const GapDiv = styled.div`
     width: 100%;
-    height: 120px;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    flex-direction: column;
+    /* padding-top: 105px; */
+    /* background-color: white; */
+    padding-left: 90px;
+    padding-right: 90px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width:600px){
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
 `
+
+const MainContainer = styled.div`
+    @media (max-width:600px){
+        margin-top: 103px;
+    }
+`
+
+const imageEngine = "https://pir4yw3w.dev.cdn.imgeng.in"
 
 
 class NestaHomePage extends React.Component {
     
     render() {
         return (
-            <div>
+            <MainContainer>
             <Container>
-                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={bannerImage} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} onNextIndicatorClick={this.HandleNextDesign}/>
+                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={imageEngine} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} onNextIndicatorClick={this.HandleNextDesign}/>
             </Container>
             <Container style={{backgroundColor: "white"}}>
-                    <ImageTextWithTitleLayout image={first} title="Uncover your Unique" text="Feeling Lost in Your Style Choices? Let Nesta Guide You to Discover Your Design" />
+                    <ImageTextWithTitleLayout bg_color="white" image={first} title="Uncover your Unique" text="Feeling Lost in Your Style Choices? Let Nesta Guide You to Discover Your Design" />
             </Container>   
             <Container>
-                    <TextWithTitleImageLayout title="Reimagine Your Space with Us" text="Discover the Design that Speaks to You and Personalize Your Preferences" image={ reimage} bg_color="revert"/>
+                    <TextWithTitleImageLayout bg_color="white" title="Reimagine Your Space with Us" text="Discover the Design that Speaks to You and Personalize Your Preferences" image={reimage} />
             </Container>
             <Container style={{backgroundColor: "white"}}>
-                    <ImageTextWithTitleLayout image={relaxNestaImage} title = "Relax. Nesta.Live" text="Ease back as we bring your envisioned design to your doorstep"/>
+                    <ImageTextWithTitleLayout bg_color="white" image={relaxNestaImage} title = "Relax. Nesta.Live" text="Ease back as we bring your envisioned design to your doorstep"/>
             </Container>    
             {/* <Container>
             <Layout3 carousel_data = {this.carasoule_data} small_image={this.state.imageArray[2]} 
@@ -67,11 +70,8 @@ class NestaHomePage extends React.Component {
             <Container>
                 <MeetAnExpert/>
             </Container>
-                    <GapDiv />
-            <FooterContainer>
-                <Footer />
-            </FooterContainer>
-            </div>
+                  
+            </MainContainer>
             //     {/* <FullImageLayout image={this.state.imageArray[3]} />
             //     <TextImageLayout text={this.state.textArray[2]} image={this.state.imageArray[4]}/>
 

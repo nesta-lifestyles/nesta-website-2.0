@@ -1,11 +1,11 @@
-import bannerTestImage from "../../../images/designs/nesta_design_102/banner.png"
-import inspiration1 from "../../../images/designs/nesta_design_102/inspiration_1.png"
-import inspiration2 from "../../../images/designs/nesta_design_102/inspiration_2.png"
-import inspiration3 from "../../../images/designs/nesta_design_102/inspiration_3.png"
+import bannerTestImage from "../../../images/designs/nesta_design_102/banner.avif"
+import inspiration1 from "../../../images/designs/nesta_design_102/inspiration_1.avif"
+import inspiration2 from "../../../images/designs/nesta_design_102/inspiration_2.avif"
+import inspiration3 from "../../../images/designs/nesta_design_102/inspiration_3.avif"
 import whyToChooseImage from "../../../images/designs/nesta_design_102/why_to_choose.png"
-import gallery1 from "../../../images/designs/nesta_design_102/gallery_1_1.png"
-import gallery2 from "../../../images/designs/nesta_design_102/gallery_1_2.png"
-import gallery3 from "../../../images/designs/nesta_design_102/gallery_1_3.png"
+import gallery1 from "../../../images/designs/nesta_design_102/gallery_1_1.avif"
+import gallery2 from "../../../images/designs/nesta_design_102/gallery_1_2.avif"
+import gallery3 from "../../../images/designs/nesta_design_102/gallery_1_3.avif"
 
 const banner = {
     "image":bannerTestImage,

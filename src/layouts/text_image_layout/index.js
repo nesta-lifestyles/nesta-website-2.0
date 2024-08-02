@@ -7,28 +7,31 @@ const ImageTextTag = styled.div`
     display: flex;
     flex-direction: row;
     gap: 52px;
+    width: 100%;
     margin-top: 100px;
+    align-items: center;
+    justify-content: center;
     background-color: ${props => props.bg_color === undefined?"white":"#F5F5F5"};
     @media (max-width:600px){
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin-top: 50px;
         gap: 10px;
     }
 ` 
 const ImageContainer = styled.div`
-    width:529px;
+    width:100%;
     height:396px;
-    max-width: 529px;
+    max-width: 100%;
     max-height: 396px;
     @media (max-width:600px){
         display: flex;
         flex-direction: column;
-        order: 0    ;
+        order: 0 ;
     }
 `
 const TextContainer = styled.div`
-    width:319px;
+    width:639px;
     height:auto;
     gap: 10px;
     display: flex;
@@ -37,6 +40,7 @@ const TextContainer = styled.div`
     align-items: start;
     justify-content: start;
     @media (max-width:600px){
+        width:100%;
         order: 1;
         gap: 1px;
     }
@@ -77,11 +81,11 @@ export const TextWithTitleImageLayout = (props) => {
         <>
         <ImageTextTag bg_color={props.bg_color}>
                 <TextContainer >
-                      <H1 value={props.title} color="black" width= "649px" height="auto"></H1>
-                      <Text value={props.text} />
+                      <H1 value={props.title} color="black" width= "100%" height="auto"></H1>
+                      <Text value={props.text} width= "100%" height="100%"/>
                 </TextContainer>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <Image src={props.image} width="100%" height="396px"/>
                 </ImageContainer>
         </ImageTextTag>
         </>

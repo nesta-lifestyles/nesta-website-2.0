@@ -30,6 +30,10 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction:column;
   gap: 24px;
+  width: 100%;
+  @media (max-width: 600px) {
+    gap: 12px;
+  }
 `
 
 const DivButtonContainer = styled.div`
@@ -37,7 +41,10 @@ const DivButtonContainer = styled.div`
   flex-direction: row;
   gap: 6px;
   height: 153px;
-  width: 580px;
+  width: 100%;
+  @media (max-width: 600px) {
+    gap: 5px;
+  }
 `
 
 const transitions = {
@@ -67,10 +74,10 @@ export const Title = (props) => {
                     ...transitions[state]
             }}>
               <TitleContainer>
-                  <H1 value={props.title} color="white" width= "596px" height="auto"/>
+                  <H1 value={props.title} color="white" width= "100%" height="auto"/>
                   <DivButtonContainer>
-                      <RevertButton width="160px" height="53px" color="white" value = "Explore Models"></RevertButton>
-                      <WhiteButton width="160px" height="53px" color="white" value = "Meet Expert"></WhiteButton>
+                       <RevertButton width="160px" height="53px" color="white" value = "Explore Models"></RevertButton>
+                      <WhiteButton width="160px" height="53px" color="white" value = "Meet Expert"></WhiteButton> 
                   </DivButtonContainer>
               </TitleContainer>
         </DivText>}

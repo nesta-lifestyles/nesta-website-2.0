@@ -4,6 +4,9 @@ import { WeimarCharacteristics } from "../../components/nesta_ville/weimar/chara
 import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { GalleryLayout2 } from "../../layouts/gallery_layout"
 import { initialSerendiDesignData } from "./data/serendi"
+import { WhyToChoose } from "../../components/nesta_design/why_to_choose"
+import MeetAnExpert from "../../components/meet_an_expert"
+import { MainContainerDiv } from "../../App"
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -29,15 +32,18 @@ class NestaDesignSerendi extends React.Component {
 
     render(){
         return( 
-        <Container>
-            <BannerComponent banner={this.state.banner}/>
-            <WeimarCharacteristics characteristics={this.state.inspiration}/>
-            <div>
-                <GalleryLayout2 images={this.state.gallery}/>
-                {/* <WhyToChoose whyToChoose={this.state.whyToChoose}/> */}
-            </div>
-            {/* <MeetAnExpert/> */}
-        </Container>)
+            <MainContainerDiv>
+                    <Container>
+                        <BannerComponent banner={this.state.banner}/>
+                        <WeimarCharacteristics characteristics={this.state.inspiration}/>
+                        <div>
+                            <GalleryLayout2 images={this.state.gallery}/>
+                            <WhyToChoose whyToChoose={this.state.whyToChoose}/>
+                        </div>
+                        <MeetAnExpert/>
+                    </Container>
+            </MainContainerDiv>
+        )
     }
 }
 

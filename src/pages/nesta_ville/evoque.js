@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { BannerWithTitleLayout } from "../../layouts/banner_layout"
 import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { initialEvoqueVillaData } from "./data/evoque"
+import MeetAnExpert from "../../components/meet_an_expert"
+import { MainContainerDiv } from "../../App"
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -31,11 +33,15 @@ class NestaVilleEvoque extends React.Component{
 
     render(){
         return( 
-        <Container>
-            <BannerComponent  banner={this.state.banner}/>
-            <WeimarCharacteristics characteristics={this.state.characteristics}/>
-            <BannerWithTitleLayout title={this.state.secondaryBanners[0].title} src={this.state.secondaryBanners[0].image} />
-        </Container>)}
+            <MainContainerDiv >
+                 <Container>
+                    <BannerComponent  banner={this.state.banner}/>
+                    <WeimarCharacteristics characteristics={this.state.characteristics}/>
+                    <BannerWithTitleLayout title={this.state.secondaryBanners[0].title} src={this.state.secondaryBanners[0].image} />
+                    <MeetAnExpert/>
+                </Container>
+            </MainContainerDiv>
+       )}
 }
 
 export default NestaVilleEvoque

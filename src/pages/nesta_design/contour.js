@@ -5,6 +5,8 @@ import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { WhyToChoose } from "../../components/nesta_design/why_to_choose"
 import { initialContourDesignData } from "./data/contour"
 import { GalleryLayout2 } from "../../layouts/gallery_layout"
+import MeetAnExpert from "../../components/meet_an_expert"
+import { MainContainerDiv } from "../../App"
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -30,15 +32,18 @@ class NestaDesignContour extends React.Component {
 
     render(){
         return( 
-             <Container>
+            <MainContainerDiv>
+                 <Container>
             <BannerComponent banner={this.state.banner}/>
             <WeimarCharacteristics characteristics={this.state.inspiration}/>
             <div>
                 <GalleryLayout2 images={this.state.gallery}/>
                 <WhyToChoose whyToChoose={this.state.whyToChoose}/>
             </div>
-            {/* <MeetAnExpert/> */}
-            </Container>       
+            <MeetAnExpert/>
+            </Container>   
+            </MainContainerDiv>
+                
         )
     }
 }

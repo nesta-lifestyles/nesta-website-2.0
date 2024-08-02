@@ -18,6 +18,10 @@ const StyledBannerDiv = styled.div`
 
 const StyledOuterDiv = styled.div`
         margin: 20px;
+        @media (max-width: 1200px) {
+          margin: 0px;       
+        }
+
 `
 
 const StyledDiv = styled.div`
@@ -41,6 +45,7 @@ const StyledDiv = styled.div`
           max-width:100%;
           background-size:cover;          
         }
+
         @media (max-width:600px){
           width:100%;
           max-width:100%;
@@ -68,7 +73,7 @@ const DivEnd = styled.div`
           position: absolute;
           bottom: 550px;
           right: 25px;
-          
+          display   : none;
     }
 `
 
@@ -84,6 +89,10 @@ const DivText = styled.div`
     100% {
         transform: translateX(0);
     }
+    }
+    @media (max-width:600px){
+      left: 5px;
+      bottom: 42px;
     }
 `
 const transitions = {

@@ -4,12 +4,14 @@ import logoImage from '../../images/logo/11.png'
 import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
-// import invertedLogoImage from '../../images/logo/11.png'
-import invtedLogoImage from '../../images/logo/invert_logo.png'
+import invertedLogoImage from '../../images/logo/11.png'
+// import invtedLogoImage from '../../images/logo/invert_logo.png'
 import { ProductInfo } from "../../layouts/product_info";
 import { NestaDesignInformation, ProductInformation } from "./nav_bar_content";
 import XIcon from "../../images/icons/x_svg.svg"
 import { Image } from "../../elements/image";
+import { isMobile } from "react-device-detect";
+
 // import { Text } from "../../elements/text";
 
 const NavBar = styled.nav`
@@ -241,13 +243,16 @@ const Navbar=() => {
     const [showNavBar, updateNavBar] = useState(true)
     
     const NavBarHandler = () => {
-        updateNavBar(!showNavBar)
+        if(isMobile) {
+            updateNavBar(!showNavBar)
+        }
+        
     }
     
     return(<>
         <NavBar>
             <LogoLayout to="/">
-                <LogoLink srcSet={`${invtedLogoImage} 300w, ${invtedLogoImage} 768w, ${invtedLogoImage} 1280w`} />
+                <LogoLink srcSet={`${invertedLogoImage} 300w, ${invertedLogoImage} 768w, ${invertedLogoImage} 1280w`} />
             </LogoLayout>
             <Bars onClick={NavBarHandler} />
         {showNavBar && (<MenuLink className="menu-link">

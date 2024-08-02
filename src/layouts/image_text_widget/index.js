@@ -7,6 +7,8 @@ const ImageTextTag = styled.div`
     display: flex;
     flex-direction: row;
     gap: 50px;
+    justify-content: center;
+    align-items: center;
     background-color: ${props => props.bg_color === undefined?"#F5F5F5":"white"};
     @media (max-width:600px){
         display: flex;
@@ -21,6 +23,7 @@ const TextImageTag = styled.div`
     display: flex;
     flex-direction: row;
     gap: 50px;
+    
     background-color: ${props => props.bg_color === undefined?"#F5F5F5":"white"};
     @media (max-width:600px){
         display: flex;
@@ -32,9 +35,9 @@ const TextImageTag = styled.div`
 ` 
 
 const ImageContainer = styled.div`
-    width:529px;
+    width: 100%;
     height:396px;
-    max-width: 529px;
+    /* max-width: 500px; */
     max-height: 396px;
     flex:1;
     @media (max-width:600px){
@@ -55,6 +58,7 @@ const TextContainer = styled.div`
     align-items: start;
     @media (max-width:600px){
         width:100%;
+        gap: 1px;
         max-width: 100%;
         overflow: inherit;
     }
@@ -106,11 +110,11 @@ export const ImageTextWithTitleLayout = (props) => {
         <>
         <ImageTextTag bg_color={props.bg_color}>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <Image src={props.image} width="100%" height="396px"/>
                 </ImageContainer>
                 <TextContainer>
-                    <H1 value={props.title} color="black" width= "649px" height="auto"></H1>
-                    <Text value={props.text} />
+                    <H1 value={props.title} color="black" width= "100%" height="auto"></H1>
+                    <Text value={props.text}  width= "100%" height="100%"/>
                 </TextContainer>
         </ImageTextTag>
         </>
@@ -122,7 +126,7 @@ export const TextWithTitleWithImageLayout = (props) =>{
             <TextImageTag  bg_color={props.bg_color}>
                 <TextContainer>
                     <H2 value={props.title} color="black" width= "100%" height="auto" weight="600"></H2>
-                    <Text value={props.text} height="auto" />
+                    <Text value={props.text} width= "100%" height="100%"/>
                 </TextContainer>
                 <ImageContainer>
                     <Image src={props.image} width="100%" height="100%"/>
@@ -141,7 +145,7 @@ export const ImageWithTextWithTitleLayout = (props) =>{
                 </ImageContainer>
                 <TextContainer>
                     <H2 value={props.title} color="black" width= "649px" height="auto" weight="600"></H2>
-                    <Text value={props.text} height="auto"/>
+                    <Text value={props.text} height="100%" width= "100%"  />
                 </TextContainer>
             </ImageTextTag>
         </>
