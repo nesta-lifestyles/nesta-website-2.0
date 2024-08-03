@@ -35,7 +35,7 @@ const Container = styled.span`
 
 const MainContainer = styled.div`
     @media (max-width:600px){
-        margin-top: 103px;
+        margin-top: 10px;
     }
 `
 
