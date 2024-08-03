@@ -342,7 +342,10 @@ const Button = styled.div`
     text-align: center;
     margin-top: 30px;
     @media (max-width: 991px) {
-        
+        width: 100px;
+        height: 30px;
+        padding: 5px 5px;
+        margin-top: 15px;
     }
 
     &:hover{
@@ -386,6 +389,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         width: 100%;
+        margin-right: 20px;
         padding-left: 5px;
         justify-content: space-between;
         align-content: center;
@@ -422,7 +426,6 @@ const Navbar=() => {
         <NavBar>
             <Container>
                 <LogoLink3 src={invertedLogoImage} />
-                {/* <LogoLink3 src={invertedLogoImage} /> */}
                 <Bars src={menuBars} onClick={NavBarHandler} />
             </Container>
            {showNavBar && 
