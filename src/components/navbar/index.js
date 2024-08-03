@@ -76,23 +76,8 @@ const LogoLayout2 = styled(Link)`
         /* background-color: #1B1E1E; */
     }
 `
-export const Bars = styled.img`
-  display: none;
-  color: #808080;
-  @media screen and (max-width: 600px) {
-    display: block;
-    position: absolute;
-    max-width: 34px;
-    max-height: 34px;
-    margin-top: 0px;
-    top: 5px;
-    /* right: 5px; */
-    right: 0;
-    transform: translate(-100%, 75%);
-    /* font-size: 1.8rem; */
-    cursor: pointer;
-  }
-`;
+
+
 
 const LogoLink2 = styled.img`
     /* background-color:green; */
@@ -125,6 +110,18 @@ const LogoLink3 = styled.img`
         height: 56px;
     }
 `
+const Bars = styled.img`
+    width: 38.8px;
+    height: 56px;
+    max-width: 38.8px;
+    max-height: 56px;
+    margin:15px;
+    cursor: pointer;
+    @media (max-width:600px){
+        width: 34px;
+        height: 34px;
+    }
+`;
 
 const LogoLink = styled.img`
     /* background-color:green; */
@@ -193,9 +190,9 @@ const MenuLink = styled.div`
         transition: right 0.4s; */
     }
 `
-Bars.defaultProps={
-    src:menuBars,
-};
+// Bars.defaultProps={
+//     src:menuBars,
+// };
 
 const ProductInfoContainer  = styled.div`
     opacity: 0;
@@ -385,6 +382,7 @@ const Container = styled.div`
     
     @media (max-width: 600px) {
         position: sticky;
+        position: -webkit-sticky;
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -424,7 +422,8 @@ const Navbar=() => {
         <NavBar>
             <Container>
                 <LogoLink3 src={invertedLogoImage} />
-                <Bars onClick={NavBarHandler} />
+                {/* <LogoLink3 src={invertedLogoImage} /> */}
+                <Bars src={menuBars} onClick={NavBarHandler} />
             </Container>
            {showNavBar && 
            <LogoLayout to="/">
