@@ -70,6 +70,7 @@ const SecondImagesLayoutContainer = styled.div`
 `
 
 const ImageContainer = styled.div`
+    width: 100%;
     border-radius: 16px;
     transition: transform 3s;
     height: max-content;
@@ -94,7 +95,7 @@ const FirstImageContainer = styled.div`
     max-height: fit-content;
     border-collapse: collapse;
     height: 194px;
-    width: 412px;
+    width: 100%;
     overflow: hidden;   
     border-collapse: collapse;
     cursor: pointer;
@@ -202,10 +203,11 @@ export const GalleryLayout = (props) =>{
 
         return (
             <ThirdImageContainer  id="second_image" onClick={() => updateActiveIndexValue(1)}>
-                        <Image  width= "100%"
-                        height= "312px"
-                        src={props.images[1]}
-                        alt="slider image"
+                        <Image  
+                            width= "100%"
+                            height= "312px"
+                            src={props.images[1]}
+                            alt="slider image"
                         />
             </ThirdImageContainer>
             )

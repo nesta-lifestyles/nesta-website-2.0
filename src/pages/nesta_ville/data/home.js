@@ -1,5 +1,5 @@
 import homeBanner from "../../../images/ville/202/banner.avif"
-import firstImage from "../../../images/ville/203/banner_11.avif"
+import firstImage from "../../../images/ville/102/banner_2_1.avif"
 import secondImage from "../../../images/ville/203/banner_2_1.avif"
 import thirdImage from "../../../images/ville/203/banner_2_2.avif"
 

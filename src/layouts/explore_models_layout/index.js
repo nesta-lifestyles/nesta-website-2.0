@@ -5,6 +5,7 @@ import { useState } from "react"
 
 const ExploreModelsContainer = styled.div`
     display: flex;
+    width: 100%;
     flex-direction: row;
     gap: 60px;
     @media (max-width:600px){
@@ -15,6 +16,7 @@ const ExploreModelsContainer = styled.div`
 const ExploreModelsColumnContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 60px;
 `
 

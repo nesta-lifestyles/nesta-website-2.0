@@ -8,7 +8,7 @@ const ExploreComponent = styled.div`
     overflow: hidden;
     position: relative;
     min-height: 396px;
-    width: 572px;
+    width: 100%;
     align-items: start;
     padding: 80px 80px 35px 38px;
     border-radius: 20px;
@@ -35,7 +35,7 @@ const Button = styled.div`
       margin: 10px;
       margin-left: 0px;
       font: 400 12px/150% Poppins, sans-serif;
-    }
+    };
 
     &:hover{
         transition: 0.35s;
@@ -59,7 +59,7 @@ const TextContainer = styled.div`
     margin-top: 140px;
     font-size: 20px;
     font-weight: 600;
-    /* font: 600 20px Poppins, sans-serif; */
+    font: 600 20px Poppins, sans-serif;
     @media (max-width: 991px) {
        height: 100%;
        text-align: end;
@@ -78,14 +78,14 @@ const StyledImage = styled.img`
     object-fit: cover;
     object-position: center;
     opacity: 0.75;
-    ${Button}:hover, ${TextContainer}:hover{
+    &:hover{
         transition: 0.35s;
         transform: scale(1.05);
         opacity: 1.0;
     }
-    @media (max-width: 991px) {
+    /* @media (max-width: 991px) {
        
-    }
+    } */
 `
 
 

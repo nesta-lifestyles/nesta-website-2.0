@@ -7,8 +7,11 @@ const ImageTextTag = styled.div`
     display: flex;
     flex-direction: row;
     gap: 50px;
+    height: 100%;
     justify-content: center;
     align-items: center;
+    /* overflow: hidden; */
+    /* border-radius: 17px; */
     background-color: ${props => props.bg_color === undefined?"#F5F5F5":"white"};
     @media (max-width:600px){
         display: flex;
@@ -23,11 +26,16 @@ const TextImageTag = styled.div`
     display: flex;
     flex-direction: row;
     gap: 50px;
-    
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    border-radius: 17px;
     background-color: ${props => props.bg_color === undefined?"#F5F5F5":"white"};
     @media (max-width:600px){
         display: flex;
         width: 100%;
+        height: 100%;
         flex-direction: column;
         margin-top: 10px;
         gap: 10px;
@@ -36,12 +44,13 @@ const TextImageTag = styled.div`
 
 const ImageContainer = styled.div`
     width: 100%;
-    height:396px;
+    height: auto;
     /* max-width: 500px; */
-    max-height: 396px;
     flex:1;
+    border-radius: 17px;
     @media (max-width:600px){
-        width: 375px;
+        width: 100%;
+        height: 300px;
         max-width: 100%;
         display: flex;
         flex-direction: column;
@@ -69,6 +78,7 @@ const ColumnContainer = styled.div`
     display: flex;
     flex-direction: column;
     text-align: start; 
+   
     
 `
 
@@ -110,7 +120,7 @@ export const ImageTextWithTitleLayout = (props) => {
         <>
         <ImageTextTag bg_color={props.bg_color}>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="396px"/>
+                    <Image src={props.image} width="100%" height="100%"/>
                 </ImageContainer>
                 <TextContainer>
                     <H1 value={props.title} color="black" width= "100%" height="auto"></H1>

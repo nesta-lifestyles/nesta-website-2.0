@@ -212,13 +212,13 @@ const transitions = {
 const WhiteButton = styled.div`
     position: relative;
     border-radius: 8px;
-    color: black;
+    color: white;
     width: 160px;
     height: auto;
     padding: 16px 24px;
-    background-color: white;
+    background-color: #4597F9;
     font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid white;
+    border: 1px solid #4597F9;
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
     margin:24px;

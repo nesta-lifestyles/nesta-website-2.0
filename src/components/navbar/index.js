@@ -19,16 +19,22 @@ import { Text } from "../../elements/text";
 const NavBar = styled.nav`
     position: fixed;
     top: 0;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
     width: 100%;
     z-index: 1;
     left: 0;
+    padding-right: 75px;
     background-color:#F5F5F5;
     @media (max-width:600px){
-        background-color: white;
+        background-color: transparent;
         width: 100%;
+        right: 0;
+        flex-direction: row;
+        padding-right: 0px;
     }
 `
 
@@ -79,7 +85,8 @@ export const Bars = styled.img`
     max-width: 34px;
     max-height: 34px;
     margin-top: 0px;
-    right: 5px;
+    top: 5px;
+    /* right: 5px; */
     right: 0;
     transform: translate(-100%, 75%);
     /* font-size: 1.8rem; */
@@ -105,6 +112,20 @@ const LogoLink2 = styled.img`
 `
 
 
+const LogoLink3 = styled.img`
+    /* background-color:green; */
+    width: 38.8px;
+    height: 56px;
+    max-width: 38.8px;
+    max-height: 56px;
+    padding:5px;
+    cursor: pointer;
+    @media (max-width:600px){
+        width: 56px;
+        height: 56px;
+    }
+`
+
 const LogoLink = styled.img`
     /* background-color:green; */
     width: 38.8px;
@@ -116,11 +137,12 @@ const LogoLink = styled.img`
     @media (max-width:600px){
         position: absolute;
         left: 23px;
-        top:8px;
+        top: 8px;
         width: 34px;
         height: 34px;
     }
-`
+`  
+
 LogoLink.defaultProps = {
     src: logoImage,
   };
@@ -307,6 +329,41 @@ const TopContainer =styled.div`
 
 `
 
+
+const Button = styled.div`
+    border-radius: 40px;
+    color: white;
+    background-color: #4597F9;
+    width: 169px;
+    height: 40px;
+    align-items: center;
+    padding: 10px 5px;
+    font: 400 14px/150% Poppins, sans-serif;
+    border: 1px solid #4597F9;
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 30px;
+    @media (max-width: 991px) {
+        
+    }
+
+    &:hover{
+        transition: 0.35s;
+        /* transform: scale(1.05); */
+        font-weight: 500;
+        text-decoration: dashed;
+        opacity: 1.0;
+        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
+    }
+    
+    &:active{
+        transform: scale(0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+`
+
+
 const BottomContainer =styled.div`
     @media (min-width:600px){
         display: none;
@@ -318,6 +375,21 @@ const BottomContainer =styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+`
+
+const Container = styled.div`
+    @media (min-width:600px){
+        display: none;
+    }
+    
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-left: 5px;
+        justify-content: space-between;
+        align-content: center;
     }
 `
 
@@ -349,20 +421,26 @@ const Navbar=() => {
     
     return(<>
         <NavBar>
-            <LogoLayout to="/">
+            <Container>
+                <LogoLink3 src={invertedLogoImage} />
+                <Bars onClick={NavBarHandler} />
+            </Container>
+           {showNavBar && 
+           <LogoLayout to="/">
                 <LogoLink src={GetLogoImage()} />
-            </LogoLayout>
-            <Bars onClick={NavBarHandler} />
-        {showNavBar && (<MenuLink className="menu-link">
-            <TopContainer >
-                <LogoLayout2 to="/" onClick={NavBarHandler}>
-                    <LogoLink2 src={moibleMenuOpenNestaLogo}/>
-                </LogoLayout2>
-                <CloseIO onClick={NavBarHandler}>
-                    <Image width="30px" height="30px" src={XIcon}/>
-                </CloseIO>
-            </TopContainer>
-            <Divider /> 
+            </LogoLayout>}
+            
+        {showNavBar && (
+            <MenuLink className="menu-link">
+                <TopContainer >
+                    <LogoLayout2 to="/" onClick={NavBarHandler}>
+                        <LogoLink2 src={moibleMenuOpenNestaLogo}/>
+                    </LogoLayout2>
+                    <CloseIO onClick={NavBarHandler}>
+                        <Image width="30px" height="30px" src={XIcon}/>
+                    </CloseIO>
+                </TopContainer>
+                <Divider /> 
                 <div>
                     <MenuItem to='/ville' onClick={NavBarHandler}>Nesta Ville</MenuItem>
                     <ProductInfoContainer className="ProductInfoContainer">
@@ -387,11 +465,12 @@ const Navbar=() => {
                 <Divider />
                 <BottomContainer> <Text value="© 2024 Nesta Company" color="#878383" width="200px"/></BottomContainer>       
             </MenuLink> )}
+            {showNavBar && <Button>Contact Us</Button>}
             
             {/* <LoginAlert>
                 <NotificationButton></NotificationButton>
                 <ShoppingCartButton></ShoppingCartButton>
-                <LoginButton>Login</LoginButton>
+                
             </LoginAlert> */}
         </NavBar>
        

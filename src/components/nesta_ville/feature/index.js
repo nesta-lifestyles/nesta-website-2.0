@@ -33,7 +33,7 @@ const FeatureContainer = styled.div`
     flex-direction: column;
     gap: 50px;
     position: relative;
-    
+
     @media (max-width:600px){
         gap: 20px;
         width: 100%;

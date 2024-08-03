@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Logo from "./logo_white.svg"
+import { RightCornerLayout } from "../../layouts/footer";
 
 export default function Footer() {
   return (
@@ -12,33 +13,46 @@ export default function Footer() {
           srcSet={Logo}
         />          
         </IconDiv>
-        <Div3>
           <Div4>
+          <Column>
+              <Div5>
+                <Div6>PRODUCTS</Div6>
+                <Div7>Nesta Ville</Div7>
+                <Div7>Nesta Design </Div7>
+                <Div7>Nesta Decor</Div7>
+              </Div5>
+            </Column>
             <Column>
               <Div5>
-                <Div6>COMPANY</Div6>
-                <Div7>About us</Div7>
-                <Div8>Stories</Div8>
+                <Div6>NESTA VILLE</Div6>
+                <Div7>Weimar</Div7>
+                <Div7>Essence</Div7>
+                <Div7>Classica</Div7>
+                <Div7>Arcadia</Div7>
+                <Div7>Evoque</Div7>
               </Div5>
             </Column>
             <Column2>
               <Div9>
-                <Div10>PRODUCTS</Div10>
-                <Div11>Nesta ville</Div11>
-                <Div12>Nesta Marketplace</Div12>
-                <Div13>Nesta Sense</Div13>
-                <Div14>Nesta Design</Div14>
+                <Div6>NESTA DESIGN</Div6>
+                <Div7>Florence</Div7>
+                <Div7>Equinox</Div7>
+                <Div7>Contour</Div7>
+                <Div7>Serendi</Div7>
               </Div9>
             </Column2>
             <Column3>
               <Div15>
-                <Div16>SOCIAL MEDIA</Div16>
-                <Div17>Linkedin</Div17>
-                <Div18>Instagram</Div18>
+                <Div6>SOCIAL MEDIA</Div6>
+                <Div7>Linkedin</Div7>
+                <Div7>Instagram</Div7>
               </Div15>
             </Column3>
+            
           </Div4>
-        </Div3>
+        <div>
+          <RightCornerLayout />
+        </div>
       </Div2>
       <Div19 />
       <Div20>
@@ -69,7 +83,6 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 72px 0;
   @media (max-width: 991px) {
     padding-bottom: 210px;
   }
@@ -77,13 +90,15 @@ const Div = styled.div`
 
 const Div2 = styled.div`
   display: flex;
-  margin-top: 22px;
   width: 100%;
-  max-width: 1048px;
-  gap: 20px;
+  max-width: 100%;
+  padding: 70px;
+  gap: 100px;
+  flex-direction: row;
   justify-content: space-between;
   @media (max-width: 991px) {
     max-width: 100%;
+    gap: 30px;
     flex-wrap: wrap;
   }
 `;
@@ -96,16 +111,8 @@ const Img = styled.img`
   align-self: start;
 `;
 
-const Div3 = styled.div`
-  padding: 0 20px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    padding: 0px;
-  }
-`;
-
 const Div4 = styled.div`
-  gap: 20px;
+  gap: 75px;
   display: flex;
   text-align: left;
   @media (max-width: 991px) {
@@ -120,11 +127,10 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 30%;
-  
+  width: 100%;
   @media (max-width: 991px) {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 0px;
   }
 `;
 
@@ -137,8 +143,7 @@ const Div5 = styled.div`
   text-transform: capitalize;
   line-height: 164%;
   @media (max-width: 991px) {
-    /* text-align: left; */
-
+    margin-top: 40px;
   }
 `;
 
@@ -146,25 +151,30 @@ const Div6 = styled.div`
   color: #767676;
   letter-spacing: 4.2px;
   font: 14px Poppins, sans-serif;
+  
 `;
 
 const Div7 = styled.div`
   font-family: Poppins, sans-serif;
   margin-top: 10px;
-`;
-
-const Div8 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 8px;
+  opacity: 0.8;
+  transition: 0.35s;
+  cursor: pointer;
+  &:hover{
+    opacity: 1;
+    transition: 0.35s;
+    transform: scale(1.05);
+  }
 `;
 
 const Column2 = styled.div`
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 46%;
+  width: 100%;
   margin-left: 20px;
   @media (max-width: 991px) {
+    margin-left: 0px;
     width: 100%;
   }
 `;
@@ -177,47 +187,21 @@ const Div9 = styled.div`
   color: #fff;
   font-weight: 400;
   line-height: 164%;
+
   @media (max-width: 991px) {
     margin-top: 40px;
   }
-`;
-
-const Div10 = styled.div`
-  color: #767676;
-  letter-spacing: 4.2px;
-  text-transform: capitalize;
-  font: 14px Poppins, sans-serif;
-`;
-
-const Div11 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 10px;
-`;
-
-const Div12 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 8px;
-`;
-
-const Div13 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 8px;
-`;
-
-const Div14 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 8px;
 `;
 
 const Column3 = styled.div`
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 24%;
-  margin-left: 20px;
+  width: 100%;
   @media (max-width: 991px) {
     width: 100%;
   }
+  
 `;
 
 const Div15 = styled.div`
@@ -233,22 +217,6 @@ const Div15 = styled.div`
   }
 `;
 
-const Div16 = styled.div`
-  color: #767676;
-  letter-spacing: 4.2px;
-  font: 14px Poppins, sans-serif;
-`;
-
-const Div17 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 10px;
-`;
-
-const Div18 = styled.div`
-  font-family: Poppins, sans-serif;
-  margin-top: 10px;
-`;
-
 const Div19 = styled.div`
   border-color: rgba(56, 56, 56, 1);
   border-style: solid;
@@ -256,7 +224,6 @@ const Div19 = styled.div`
   background-color: #383838;
   align-self: stretch;
   min-height: 1px;
-  margin-top: 82px;
   width: 100%;
   @media (max-width: 991px) {
     max-width: 100%;
@@ -266,9 +233,10 @@ const Div19 = styled.div`
 
 const Div20 = styled.div`
   display: flex;
-  margin-top: 62px;
+  margin:20px;
+
   width: 100%;
-  max-width: 1206px;
+  max-width: 100%;
   gap: 20px;
   font-size: 14px;
   color: #878f9c;
