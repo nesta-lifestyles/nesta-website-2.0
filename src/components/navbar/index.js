@@ -108,6 +108,7 @@ const LogoLink3 = styled.img`
     @media (max-width:600px){
         width: 56px;
         height: 56px;
+        margin-top: 15px;
     }
 `
 const Bars = styled.img`
