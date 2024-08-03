@@ -5,12 +5,14 @@ import { InputTextBoxEmail } from "../../elements/form"
 
 
 const Container = styled.div`
+    position: relative;
     width: 300px;
     height: auto;
     display: flex;
     gap: 20px;
     flex-direction: column;
     text-align: left;
+    margin-right:15px;
 `
 
 const SubscriberContainer = styled.div`
@@ -18,6 +20,7 @@ const SubscriberContainer = styled.div`
     display: flex;
     flex-direction: row;
     height: 20px;
+    width: 90%;
     height: auto;
     border-radius: 8px;
     opacity: 0.5;
@@ -62,7 +65,7 @@ const Button = styled.div`
     border-radius: 8px;
     color: white;
     background-color: #4597F9;
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 16px 24px;
     font: 400 14px/150% Poppins, sans-serif;

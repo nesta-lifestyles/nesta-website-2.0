@@ -32,7 +32,7 @@ const StyledInputTextBox = styled.input`
 
 
 const StyledInputTextBox2 = styled.input`
-    width: ${props => props.width === undefined ?"100%":props.width};;
+    width: ${props => props.width === undefined ?"90%":props.width};;
     height: 100%;
     border-radius: 8px;
     fill: Solid black;
