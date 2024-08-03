@@ -384,6 +384,7 @@ const Container = styled.div`
     }
     
     @media (max-width: 600px) {
+        position: sticky;
         display: flex;
         flex-direction: row;
         width: 100%;

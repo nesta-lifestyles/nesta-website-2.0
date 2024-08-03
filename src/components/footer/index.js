@@ -99,6 +99,7 @@ const Div2 = styled.div`
   @media (max-width: 991px) {
     max-width: 100%;
     gap: 30px;
+    padding: 20px;
     flex-wrap: wrap;
   }
 `;
