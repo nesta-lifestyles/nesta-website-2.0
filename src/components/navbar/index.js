@@ -4,7 +4,7 @@ import logoImage from '../../images/logo/11.png'
 import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
-import invertedLogoImage from '../../images/logo/11.png'
+import invertedLogoImage from '../../images/logo/logo.png'
 import moibleNestaLogo from '../../images/logo/logo_white.svg'
 import moibleMenuOpenNestaLogo from '../../images/logo/logo_secondary.svg'
 import { ProductInfo } from "../../layouts/product_info";
@@ -32,9 +32,9 @@ const NavBar = styled.nav`
     background-color:#F5F5F5;
     @media (max-width:600px){
         background-color: white;
-        opacity: 0.7;
+        opacity: 1;
         width: 100%;
-        height: 30px;
+        height:50px;
         right: 0;
         flex-direction: row;
         padding-right: 0px;
@@ -109,9 +109,8 @@ const LogoLink3 = styled.img`
     padding:5px;
     cursor: pointer;
     @media (max-width:600px){
-        width: 24px;
-        height: 30px;
-        margin-top: 15px;
+        width: 40px;;
+        height: 40px;
     }
 `
 const Bars = styled.img`
@@ -119,11 +118,12 @@ const Bars = styled.img`
     height: 56px;
     max-width: 38.8px;
     max-height: 56px;
-    margin:15px;
+    /* margin:15px; */
     cursor: pointer;
     @media (max-width:600px){
         width: 24px;
         height: 24px;
+        margin-top: 10px;
     }
 `;
 
@@ -384,12 +384,6 @@ const Navbar=() => {
     const [showNavBar, updateNavBar] = useState(menuFlag)
     const NavBarHandler = () => {
         if(isMobile) {
-            var navContainer = document.getElementById("nav_bar_container")
-            if (navContainer && !showNavBar) {
-                navContainer.style.opacity=1
-            } else {
-                navContainer.style.opacity=0.7
-            }
             updateNavBar(!showNavBar)
         }
         
@@ -398,7 +392,7 @@ const Navbar=() => {
 
     
     return(<>
-        <NavBar id="nav_bar_container">
+        <NavBar>
             <Container>
                 <LogoLink3 src={invertedLogoImage} />
                 <Bars src={menuBars} onClick={NavBarHandler} />
