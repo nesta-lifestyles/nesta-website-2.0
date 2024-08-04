@@ -6,6 +6,7 @@ import whyToChooseImage from "../../../images/designs/nesta_design_103/why_to_ch
 import gallery1 from "../../../images/designs/nesta_design_103/gallery_1_1.avif"
 import gallery2 from "../../../images/designs/nesta_design_103/gallery_1_2.avif"
 import gallery3 from "../../../images/designs/nesta_design_103/gallery_1_3.avif"
+import meetAnExpertImage from "../../../images/designs/nesta_design_103/meet_an_expert.avif"
 
 const banner = {
     "image":bannerImage,
@@ -31,11 +32,24 @@ const whyToChoose = {
     ]
 }
 
+export const DesignMeetAnExpertData = {
+    "title":"Meet an Expert",
+    "text":"Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions",
+    "image":meetAnExpertImage
+}
+
+// meet_expert_data:{
+//  *   "title":"",
+//  *    "text":"",
+//  *    "image":""
+//  * }
+
 const galleryImages = [gallery1,gallery2, gallery3]
 
 export const initialContourDesignData = {
     "banner":banner,
     "inspiration":characteristics,
     "whyToChoose":whyToChoose,
-    "gallery":galleryImages
+    "gallery":galleryImages,
+    "meetAnExpert":DesignMeetAnExpertData
 }

@@ -2,6 +2,8 @@ import React from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import styled from "styled-components";
 import { OnlyTitle} from "../../components/banner/title";
+import { H2 } from "../../elements/text";
+import { KnowMoreButton, MeetUsButton } from "../../elements/button/know_more";
 
 const StyledBannerDiv = styled.div`
         width: 100%;
@@ -72,6 +74,7 @@ const StyledDiv = styled.div`
 `
 
 const StyledDiv2 = styled.div`
+        position: relative;
         width: 100%;
         height: 506px;
         max-width: 100%;
@@ -112,12 +115,17 @@ const StyledDiv2 = styled.div`
 
 const DivText = styled.div`
     position: absolute;
-    left: 58px;
-    bottom: 100px;
-    height: 40px;
-    max-height: 40px;
+    left: 2%;
+    bottom: 10%;
+    height: auto;
+    max-height: auto;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
     text-align: left;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    justify-content: space-between;
+    align-items: center;
+    /* animation: 1s ease-out 0s 1 slideInFromLeft; */
     @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
@@ -127,12 +135,15 @@ const DivText = styled.div`
     }
     }
     @media (max-width:600px){
+          align-items: flex-start;
+          width: 100%;
           display:flex ; 
+          /* justify-content: flex-start; */
           flex-direction:column;
-          gap: 20px;
-          align-content: flex-start;
-          margin-bottom: 10px;
-          bottom: 15%;
+          gap: 10px;
+          height: 150px;
+          /* align-content: flex-start; */
+          bottom: 2%;
           left: 20px;
     }
 `
@@ -173,97 +184,18 @@ const transitions = {
   };
 
 
-  const Button = styled.div`
-    position: relative;
-    border-radius: 8px;
-    color: white;
-    width: 160px;
-    height: auto;
-    padding: 16px 24px;
-    font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid white;
-    transition: transform 0.1s, box-shadow 0.1s;
-    cursor: pointer;
-    margin:24px;
-    @media (max-width:600px){
-      width: 140px;
-      height: 53px;
-      margin: 10px;
-      margin-left: 0px;
-      font: 400 12px/150% Poppins, sans-serif;
-    }
-    
-
-    &:hover{
-        transition: 0.35s;
-        /* transform: scale(1.05); */
-        font-weight: 500;
-        text-decoration: dashed;
-        opacity: 1.0;
-        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-    }
-    
-    &:active{
-        transform: scale(0.95);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-`
-
-const WhiteButton = styled.div`
-    position: relative;
-    border-radius: 8px;
-    color: white;
-    width: 160px;
-    height: auto;
-    padding: 16px 24px;
-    background-color: #4597F9;
-    font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid #4597F9;
-    transition: transform 0.1s, box-shadow 0.1s;
-    cursor: pointer;
-    margin:24px;
-    @media (max-width:600px){
-      width: 140px;
-      height: 53px;
-      margin: 10px;
-      margin-left: 0px;
-      font: 400 12px/150% Poppins, sans-serif;
-    }
-
-    @media (max-width: 991px) {
-      margin-left: 0px;
-      /* margin-bottom: 24px;
-      margin:0px; */
-    }
-
-    &:hover{
-        transition: 0.35s;
-        /* transform: scale(1.05); */
-        font-weight: 500;
-        text-decoration: dashed;
-        opacity: 1.0;
-        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-    }
-    
-    &:active{
-        transform: scale(0.95);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-`
-
 const ButtonContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap:12px;
-    position: absolute;
-    right: 20px;
-    bottom: 50px;
+    position: relative;
     @media (max-width:600px){
+          position: relative;
           display:flex ; 
           flex-direction:row;
           gap: 5px;
-          left: 20px;
-          bottom: 5px;
+          /* left: 20px; */
+          /* bottom: 5px; */
     }
 `
 
@@ -276,12 +208,13 @@ export const BannerLayout =(props)=>{
      classNames={{enterActive: 'animate__animated animate__flipInX', exitActive: 'animate__animated animate__flipOutX'}}>
        {state => <StyledDiv src={props.src} style={{...transitions[state]}}>
                     <DivText> 
-                        <OnlyTitle props={props} animationflag = {props.animationflag} title={props.title}/>
+                      <H2 value={props.title} color="white" width= "100%" height="40px" weight="600"/>
+                      <ButtonContainer>
+                        <KnowMoreButton onClick={props.KnowMoreHandler} />
+                        <MeetUsButton onClick={props.contactUsHandler} />
+                      </ButtonContainer>
                     </DivText>
-                    <ButtonContainer>
-                        <Button onClick={props.KnowMoreHandler}>Know More</Button>
-                        <WhiteButton onClick={props.contactUsHandler}>Contact Us</WhiteButton>
-                    </ButtonContainer>
+                    
                 </StyledDiv>}
         </CSSTransition></SwitchTransition>
         </StyledOuterDiv>
@@ -317,8 +250,8 @@ export const BannerWithTitleAndButtonLayout =(props)=>{
      classNames={{enterActive: 'animate__animated animate__flipInX', exitActive: 'animate__animated animate__flipOutX'}}>
        {state => <StyledDiv2 src={props.src} style={{...transitions[state]}}>
                     <DivText> 
-                        <OnlyTitle props={props} animationflag = {props.animationflag} title={props.title}/>
-                        <WhiteButton onClick={props.onClickHandler}>Meet an Expert</WhiteButton>
+                        <H2 value={props.title} color="white" width= "50%" height="40px" weight="600"/>
+                        <MeetUsButton onClick={props.onClickHandler} />
                     </DivText>
                 </StyledDiv2>}
         </CSSTransition></SwitchTransition>

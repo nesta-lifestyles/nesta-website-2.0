@@ -41,7 +41,7 @@ class NestaVilleClassica extends React.Component{
                     <WeimarCharacteristics characteristics={this.state.comfortAnalysis}/>
                     <WeimarCharacteristics characteristics={this.state.temperatureAnalysis}/>
                     <BannerWithTitleLayout title={this.state.secondaryBanners[1].title} src={this.state.secondaryBanners[1].image} />
-                    <MeetAnExpert/>
+                    <MeetAnExpert meetAnExpert={this.state.meetAnExpert}/>
                 </Container>
             </MainContainerDiv>
         )}

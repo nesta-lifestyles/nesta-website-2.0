@@ -101,7 +101,7 @@ class NestaVilleHomePage extends React.Component{
                     <ProcessLayout />
                     <NestaVilleFeatures />
                     <GalleryLayout images={NestavilleHomePageData.gallery}></GalleryLayout>
-                    <MeetAnExpert/>
+                    <MeetAnExpert meetAnExpert={NestavilleHomePageData.meetAnExpert}/>
                     <TransitionGroup>
                 {this.state.currentOverlay === 'overlay1' && (
                     

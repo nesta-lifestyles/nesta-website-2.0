@@ -1,11 +1,10 @@
 import styled from "styled-components"
-import {CSSTransition, SwitchTransition} from 'react-transition-group';
-import { Title } from "./title"
-import {  RectangleIndicator } from "../../elements/banner/indicator";
 import React from 'react';
+import { CarouselLocal } from "../../layouts/banner_layout/carasoule";
 
 
 const StyledBannerDiv = styled.div`
+        position: relative;
         width: 100%;
         height: 675px;
         border-radius: 24px;
@@ -13,11 +12,12 @@ const StyledBannerDiv = styled.div`
         border-color: green;
         max-width: 100%;
         max-height: 675px;
+        
 `
 
 
 const StyledOuterDiv = styled.div`
-        margin: 20px;
+        margin-top: 20px;
         @media (max-width: 1200px) {
           margin: 0px;       
         }
@@ -25,13 +25,15 @@ const StyledOuterDiv = styled.div`
 `
 
 const StyledDiv = styled.div`
+        position: relative;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         height: 634px;
         max-width: 100%;
         max-height: 634px;
         background: ${(props) => `url(${props.src})`} no-repeat center center fixed; 
         background-attachment: scroll;
-        position: relative;
         background-size:100% auto;
         background-repeat: no-repeat;
         background-position: center;
@@ -63,74 +65,46 @@ const StyledDiv = styled.div`
         }
 `
 
-
-
-const DivEnd = styled.div`
-   position: absolute;
-   bottom: 66px;
-   right: 59px;
-   @media (max-width:600px){
-          position: absolute;
-          bottom: 550px;
-          right: 25px;
-          display   : none;
-    }
-`
-
-const DivText = styled.div`
-    position: absolute;
-    left: 58px;
-    bottom: 42px;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    @keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-    }
-    @media (max-width:600px){
-      left: 5px;
-      bottom: 42px;
-    }
-`
-const transitions = {
-    entering: {
-      display: 'block'
-    },
-    entered: {
-      opacity: 0,
-      display: 'block'
-    },
-    exiting: {
-      opacity: 0,
-      display: 'block'
-    },
-    exited: {
-      opacity: '0',
-      display: 'none'
-    }
-  };
-
 export const Banner =(props)=>{
     return <StyledBannerDiv>
       <StyledOuterDiv>
-        <SwitchTransition made="out-in">
-    <CSSTransition key={props.animationflag} 
-     timeout={300} 
-     classNames={{enterActive: 'animate__animated animate__flipInX', exitActive: 'animate__animated animate__flipOutX'}}>
-       {state => <StyledDiv src={props.src} style={{...transitions[state]}}>
-                    <DivEnd> 
-                        {/* <Indicator OnPrevIndicatorClick={props.OnPrevIndicatorClick} onNextIndicatorClick={props.onNextIndicatorClick}/> */}
-                        <RectangleIndicator></RectangleIndicator>
-                    </DivEnd>
-                    <DivText> 
-                     <Title props={props} animationflag = {props.animationflag} title={props.title}/>
-                    </DivText>
-                </StyledDiv>}
-        </CSSTransition></SwitchTransition>
+      <StyledDiv>
+                    <CarouselLocal>
+                    </CarouselLocal>
+                    </StyledDiv>
         </StyledOuterDiv>
       </StyledBannerDiv>
     // return <Image src={props.src} width={"100%"} height={"634px"}/>
 }
+
+
+export const ViewAllButton = styled.div`
+    position: relative;
+    border-radius: 8px;
+    color: black;
+    width: 160px;
+    height: auto;
+    padding: 16px 24px;
+    font: 400 14px/150% Poppins, sans-serif;
+    border: 1px solid black;
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+    margin:24px;
+    @media (max-width: 991px) {
+        
+    }
+
+    &:hover{
+        transition: 0.35s;
+        /* transform: scale(1.05); */
+        font-weight: 500;
+        text-decoration: dashed;
+        opacity: 1.0;
+        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
+    }
+    
+    &:active{
+        transform: scale(0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+`

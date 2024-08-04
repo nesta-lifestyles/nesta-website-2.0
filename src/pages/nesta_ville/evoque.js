@@ -38,7 +38,7 @@ class NestaVilleEvoque extends React.Component{
                     <BannerComponent  banner={this.state.banner}/>
                     <WeimarCharacteristics characteristics={this.state.characteristics}/>
                     <BannerWithTitleLayout title={this.state.secondaryBanners[0].title} src={this.state.secondaryBanners[0].image} />
-                    <MeetAnExpert/>
+                    <MeetAnExpert meetAnExpert={this.state.meetAnExpert}/>
                 </Container>
             </MainContainerDiv>
        )}

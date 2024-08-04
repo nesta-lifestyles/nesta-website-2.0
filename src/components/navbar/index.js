@@ -13,6 +13,7 @@ import XIcon from "../../images/icons/x_svg.svg"
 import { Image } from "../../elements/image";
 import { isMobile } from "react-device-detect";
 import { Text } from "../../elements/text";
+import { ContactUsButtonRounded } from "../../elements/button/know_more";
 
 // import { Text } from "../../elements/text";
 
@@ -328,41 +329,6 @@ const TopContainer =styled.div`
 `
 
 
-const Button = styled.div`
-    border-radius: 40px;
-    color: white;
-    background-color: #4597F9;
-    width: 169px;
-    height: 40px;
-    align-items: center;
-    padding: 10px 5px;
-    font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid #4597F9;
-    transition: transform 0.1s, box-shadow 0.1s;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 30px;
-    @media (max-width: 991px) {
-        width: 100px;
-        height: 30px;
-        padding: 5px 5px;
-        margin-top: 15px;
-    }
-
-    &:hover{
-        transition: 0.35s;
-        /* transform: scale(1.05); */
-        font-weight: 500;
-        text-decoration: dashed;
-        opacity: 1.0;
-        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-    }
-    
-    &:active{
-        transform: scale(0.95);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-`
 
 
 const BottomContainer =styled.div`
@@ -458,18 +424,18 @@ const Navbar=() => {
                     </ProductInfoContainer>
                 </div>
                 <div>
-                    <MenuItem>Nesta MarketPlace</MenuItem>
+                    <MenuItem>Nesta Decor</MenuItem>
                 </div>
-                <div>
+                {/* <div>
                     <MenuItem>Nesta Sense</MenuItem>
                 </div>
                 <div>
                     <MenuItem>Nesta Xplorer</MenuItem>         
-                </div>
+                </div> */}
                 <Divider />
                 <BottomContainer> <Text value="© 2024 Nesta Company" color="#878383" width="200px"/></BottomContainer>       
             </MenuLink> )}
-            {showNavBar && <Button>Contact Us</Button>}
+            {showNavBar && <ContactUsButtonRounded />}
             
             {/* <LoginAlert>
                 <NotificationButton></NotificationButton>

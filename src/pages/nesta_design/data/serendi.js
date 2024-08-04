@@ -6,6 +6,7 @@ import whyToChooseImage from "../../../images/designs/nesta_design_102/why_to_ch
 import gallery1 from "../../../images/designs/nesta_design_102/gallery_1_1.avif"
 import gallery2 from "../../../images/designs/nesta_design_102/gallery_1_2.avif"
 import gallery3 from "../../../images/designs/nesta_design_102/gallery_1_3.avif"
+import { DesignMeetAnExpertData } from "./contour"
 
 const banner = {
     "image":bannerTestImage,
@@ -37,5 +38,6 @@ export const initialSerendiDesignData = {
     "banner":banner,
     "inspiration":inspirations,
     "whyToChoose":whyToChoose,
-    "gallery":galleryImages
+    "gallery":galleryImages,
+    "meetAnExpert":DesignMeetAnExpertData
 }

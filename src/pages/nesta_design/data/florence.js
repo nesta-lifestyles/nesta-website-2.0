@@ -7,6 +7,7 @@ import whyToChooseImage from "../../../images/designs/nesta_design_100/why_to_ch
 import gallery1 from "../../../images/designs/nesta_design_100/gallery_1_1.avif"
 import gallery2 from "../../../images/designs/nesta_design_100/gallery_1_2.avif"
 import gallery3 from "../../../images/designs/nesta_design_100/gallery_1_3.avif"
+import { DesignMeetAnExpertData } from "./contour"
 
 
 const banner = {
@@ -39,5 +40,6 @@ export const initialFlorenceDesignData = {
     "banner":banner,
     "inspiration":inspiration,
     "whyToChoose":whyToChoose,
-    "gallery":galleryImages
+    "gallery":galleryImages,
+    "meetAnExpert":DesignMeetAnExpertData
 }

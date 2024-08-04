@@ -152,6 +152,7 @@ const Div6 = styled.div`
   color: #767676;
   letter-spacing: 4.2px;
   font: 14px Poppins, sans-serif;
+  user-select: none;
   
 `;
 
@@ -161,6 +162,7 @@ const Div7 = styled.div`
   opacity: 0.8;
   transition: 0.35s;
   cursor: pointer;
+  user-select: none;
   &:hover{
     opacity: 1;
     transition: 0.35s;

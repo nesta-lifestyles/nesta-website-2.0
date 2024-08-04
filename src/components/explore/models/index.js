@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
+import { ExploreButton } from "../../../elements/button/know_more"
 
 const ExploreComponent = styled.div`
     display: flex;
@@ -16,39 +17,6 @@ const ExploreComponent = styled.div`
     @media (max-width: 991px) {
         padding: 0 20px;
         width: 100%;
-    }
-`
-
-const Button = styled.div`
-    position: relative;
-    border-radius: 8px;
-    margin-top: 24px;
-    color: var(--Secondary-C4, #fff);
-    padding: 16px 24px;
-    font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid rgba(255, 255, 255, 1);
-    transition: transform 0.1s, box-shadow 0.1s;
-    cursor: pointer;
-    @media (max-width:600px){
-      width: 140px;
-      height: 53px;
-      margin: 10px;
-      margin-left: 0px;
-      font: 400 12px/150% Poppins, sans-serif;
-    };
-
-    &:hover{
-        transition: 0.35s;
-        /* transform: scale(1.05); */
-        font-weight: 500;
-        text-decoration: dashed;
-        opacity: 1.0;
-        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-    }
-
-    &:active{
-        transform: scale(0.95);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 `
 
@@ -88,21 +56,16 @@ const StyledImage = styled.img`
     } */
 `
 
-
-
-
-
 export const ExploreModels = (props) => {
     const navigate = useNavigate();
     
     const handleClick = () => {
-        console.log("CLICKED ON EXPLORE MODELS")
         navigate(props.model.path)
     };
 
     return (<ExploreComponent key={props.model.title} >
                 <StyledImage className="onHover" loading="lazy" srcSet={props.model.image}  />
                 <TextContainer>{props.model.title}</TextContainer>
-                <Button onClick={handleClick}>Explore Models</Button>
+                <ExploreButton onClick={handleClick} />
             </ExploreComponent>)
 }

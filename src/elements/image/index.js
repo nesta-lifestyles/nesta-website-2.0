@@ -4,8 +4,7 @@ import React from 'react';
 const StyledImage = styled.img`
     display: block;
     transition: transform .4s;
-    overflow: hidden;   
-    object-fit: cover;
+    object-fit: fill;
     width: ${props => props.width === undefined? "100%" : props.width}; 
     height: ${props => props.height === undefined? "100%" : props.height};
     max-width: ${props => props.width === undefined? "100%;" : props.width}; 
@@ -28,10 +27,35 @@ const StyledDiv = styled.div`
     border-radius: 16px; 
 `
 
+const BannerImageContainer = styled.img`
+    display: flex;
+    transition: transform .4s;
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    @media(max-width:600px) {
+        height: 600px;
+        width: 100%;
+    }
+    
+    /* &:hover {
+        transform: ${props => props.isTransformOnHover? "scale(1.2)" :" scale(1)"};
+        transform-origin: ${props => props.isTransformOnHover?"50% 50%": "0% 0%"};       
+    } */
+`
+
+
 const ImageNotFound = "Image Not Found!!"
 
 export const Image = (props) => {
     return    (<StyledDiv width={props.width} height={props.height} isTransformOnHover={props.isTransformOnHover} >
                         <StyledImage src={props.src} alt={ImageNotFound} width={props.width} height={props.height} id={props.id}/>
+                </StyledDiv>)
+}
+
+
+export const BannerImage = (props) => {
+    return    (<StyledDiv width={props.width} height={props.height} isTransformOnHover={props.isTransformOnHover} >
+                        <BannerImageContainer src={props.src} alt={ImageNotFound} width={props.width} height={props.height} id={props.id}/>
                 </StyledDiv>)
 }

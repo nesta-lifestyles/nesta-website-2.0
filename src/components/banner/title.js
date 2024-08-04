@@ -2,20 +2,25 @@ import styled from "styled-components"
 import {CSSTransition, SwitchTransition} from 'react-transition-group';
 import { H1, H2 } from "../../elements/text";
 import React from 'react';
-import { WhiteButton, RevertButton } from "../../elements/button";
+import { ExploreButton, MeetUsButton } from "../../elements/button/know_more";
 
 const DivText = styled.div`
-    position: absolute;
-    left: 60px;
-    bottom: 10px;
+    /* position: absolute; */
+    /* left: 60px;
+    bottom: 10px; */
     z-index: 1;
-    height: 153px;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    /* height: 153px; */
+    /* -webkit-animation-name: change;
+      animation-name: change;
+      animation-duration: 10s;
+      animation-iteration-count: infinite; */
+    animation: 2s ease-out 0s 1 change;
     @media (max-width:600px){
-      position: absolute;
+      position: relative;
       left: 15px;
       bottom: 12px;
     }
+
     @keyframes slideInFromLeft {
         0% {
             transform: translateX(-100%);
@@ -24,15 +29,32 @@ const DivText = styled.div`
             transform: translateX(0);
         }
     }
+    
+    @keyframes change {
+      0%, 12.66%{transform:translate3d(0,100%,0);}
+      /* 16.66%, 29.32% {transform:translate3d(0,50%,0);} */
+      33.32%, 45.98% {transform:translate3d(0,0%,0);}
+      /* 49.98%, 62.64% {transform:translate3d(0,75%,0);} */
+      /* 66.64%, 79.3% {transform:translate3d(0,100%,0);} */
+      /* 83.3%,  95.96% {transform:translate3d(0,25%,0);} */
+      }
 `
 
 const TitleContainer = styled.div`
+  position: absolute;
+  top: 70%;
+  left: 10%;
   display: flex;
+  gap:10px;
   flex-direction:column;
-  gap: 24px;
+  /* gap: 10px; */
   width: 100%;
+  bottom: 50%;
   @media (max-width: 600px) {
-    gap: 12px;
+    top: 70%;
+    left: 1%;
+    height: auto;
+    gap: 5px;
   }
 `
 
@@ -40,12 +62,14 @@ const DivButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 6px;
-  height: 153px;
+  /* height: 153px; */
   width: 100%;
   @media (max-width: 600px) {
     gap: 5px;
   }
 `
+
+
 
 const transitions = {
     entering: {
@@ -65,24 +89,33 @@ const transitions = {
     }
   };
 
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    
+  }
+`
 export const Title = (props) => {
-    return <SwitchTransition made="out-in">
-    <CSSTransition key={props.animationflag} 
-     timeout={300} 
-     classNames={{enterActive: 'animate__animated animate__flipInX', exitActive: 'animate__animated animate__flipOutX'}}>
-       {state => <DivText style={{
-                    ...transitions[state]
-            }}>
-              <TitleContainer>
-                  <H1 value={props.title} color="white" width= "100%" height="auto"/>
-                  <DivButtonContainer>
-                       <RevertButton width="160px" height="53px" color="white" value = "Explore Models"></RevertButton>
-                      <WhiteButton width="160px" height="53px" color="white" value = "Meet Expert"></WhiteButton> 
-                  </DivButtonContainer>
-              </TitleContainer>
-        </DivText>}
-    </CSSTransition>
-</SwitchTransition>
+    return (
+      <TitleContainer id="title_container">
+          {/* <DivText2> */}
+            <Container>
+              <H1 value="Nestaville - Where Artistry Meets" color="white" height="auto"></H1>
+              <DivText>
+                <H1 value={props.title} color={props.color_codes} width= "100%" height="auto"/>
+              </DivText>
+            </Container>
+            
+            <DivButtonContainer>
+                <ExploreButton> Models</ExploreButton>
+                <MeetUsButton/> 
+            </DivButtonContainer>
+          {/* </DivText2> */}
+      </TitleContainer>
+      )
 }
 
 

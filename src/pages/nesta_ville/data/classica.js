@@ -14,6 +14,10 @@ import temperature3 from "../../../images/ville/202/temperature_3.avif"
 import secondaryBanner1 from "../../../images/ville/202/banner_2_1.avif"
 import secondaryBanner2 from "../../../images/ville/202/banner_2_2.avif"
 
+import meetAnExpertImage from "../../../images/ville/202/meet_an_expert.avif"
+import { VilleMeetAnExpertData } from "./arcadia"
+
+
 const banner = {
     "image":bannerImage,
     "banner_title":"Nestaville Series 201 -  Classica",
@@ -49,10 +53,14 @@ const secondaryBanners = [
     }
 ]
 
+const meetAnExpertdata = {...VilleMeetAnExpertData, "image":meetAnExpertImage}
+
 export const initialClassicaVillaData = {
     "banner":banner,
     "characteristics":characteristics,
     "comfortAnalysis":comfortAnalysis,
     "temperatureAnalysis":temperatureAnalysis,
-    "secondaryBanners":secondaryBanners
+    "secondaryBanners":secondaryBanners,
+    "meetAnExpert":meetAnExpertdata
+    
 }

@@ -1,66 +1,41 @@
 import * as React from "react";
 import styled from "styled-components";
-import meetAndExpert from "./meet_expert_img.svg"
 import { H2, Text } from "../../elements/text";
+import { MeetUsButton } from "../../elements/button/know_more";
 
-export default function MeetAnExpert() {
+/**
+ * 
+ * meetAnExpertData:{
+ *   "title":"",
+ *    "text":"",
+ *    "image":""
+ * }
+ */
+
+
+export default function MeetAnExpert(props) {
+  console.log("MEET AN EXPERT DATA - "+JSON.stringify(props))
   return (
     <Div>
       <Div2>
         <Column>
           <Img
             loading="lazy"
-            srcSet={meetAndExpert}
+            srcSet={props.meetAnExpert.image}
           />
         </Column>
         <Column2>
           <Div3>
-            <H2 value="Meet an Expert" width="100%" color="white" height="auto" />
-            <Text color="white"  height="auto" width="100%" value="Talk to our design expert for personalized guidance in home architecture and interior design. Book a consultation today and elevate your living spaces with tailored solutions">
+            <H2 value={props.meetAnExpert.title} width="100%" color="white" height="auto" />
+            <Text color="white"  height="auto" width="100%" value={props.meetAnExpert.text}>
             </Text>
-            <Button>Meet Expert</Button>
+            <MeetUsButton />
           </Div3>
         </Column2>
       </Div2>
     </Div>
   );
 }
-
-
-const Button = styled.div`
-    position: relative;
-    border-radius: 8px;
-    color: black;
-    background-color: white;
-    width: 160px;
-    height: auto;
-    padding: 16px 24px;
-    font: 400 14px/150% Poppins, sans-serif;
-    border: 1px solid black;
-    transition: transform 0.1s, box-shadow 0.1s;
-    cursor: pointer;
-    @media (max-width:600px){
-      width: 120px;
-      height: 53px;
-      margin: 10px;
-      margin-left: 0px;
-      font: 400 12px/150% Poppins, sans-serif;
-    }
-
-    &:hover{
-        transition: 0.35s;
-        /* transform: scale(1.05); */
-        font-weight: 500;
-        text-decoration: dashed;
-        opacity: 1.0;
-        box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-    }
-    
-    &:active{
-        transform: scale(0.95);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-`
 
 const Div = styled.div`
   border-radius: 16px;

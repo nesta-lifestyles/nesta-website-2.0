@@ -3,8 +3,9 @@ import characteristics1 from "../../../images/ville/102/characteristics_1.avif"
 import characteristics2 from "../../../images/ville/102/characteristics_2.avif"
 import characteristics3 from "../../../images/ville/102/characteristics_3.avif"
 import secondaryBanner1 from "../../../images/ville/102/banner_2_1.avif"
+import { VilleMeetAnExpertData } from "./arcadia"
 
-
+import meetAnExpertImage from "../../../images/ville/default_meet_an_expert.avif"
 
 const banner = {
     "image":bannerImage,
@@ -27,8 +28,11 @@ const secondaryBanners = [
 ]
 
 
+const meetAnExpertdata = {...VilleMeetAnExpertData, "image":meetAnExpertImage}
+
 export const initialEvoqueVillaData = {
     "banner":banner,
     "characteristics":characteristics,
-    "secondaryBanners":secondaryBanners
+    "secondaryBanners":secondaryBanners,
+    "meetAnExpert":meetAnExpertdata
 }

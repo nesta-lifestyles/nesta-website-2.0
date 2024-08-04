@@ -56,7 +56,7 @@ export const NestaDesignHomePage = () => {
                     </div>
                     <ProcessLayout/>
                    <GalleryLayout images={NestaDesignHomePageData.gallery}></GalleryLayout>
-                   <MeetAnExpert/>
+                   <MeetAnExpert meetAnExpert={NestaDesignHomePageData.meetAnExpert}/>
             </Container>
         </MainContainerDiv>)
 

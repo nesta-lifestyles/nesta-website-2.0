@@ -47,7 +47,7 @@ class NestaDesignFlorence extends React.Component {
                         <GalleryLayout2 images={this.state.gallery}/>
                         <WhyToChoose whyToChoose={this.state.whyToChoose}/>
                     </DivGap>
-                    <MeetAnExpert/>
+                    <MeetAnExpert meetAnExpert={this.state.meetAnExpert}/>
                 </Container>
             </MainContainerDiv>
         )

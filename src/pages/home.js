@@ -8,16 +8,15 @@ import { TextWithTitleImageLayout } from '../layouts/text_image_layout';
 import { Banner } from '../components/banner';
 import styled from 'styled-components';
 import MeetAnExpert from '../components/meet_an_expert';
+import { DesignMeetAnExpertData } from './nesta_design/data/contour';
 
 const Container = styled.span`
     display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
     flex-direction: column;
-    /* padding-top: 105px; */
-    /* background-color: white; */
     padding-left: 90px;
     padding-right: 90px;
     justify-content: center;
@@ -32,6 +31,7 @@ const Container = styled.span`
         gap: 10px;
     }
 `
+
 
 const MainContainer = styled.div`
     @media (max-width:600px){
@@ -67,7 +67,7 @@ class NestaHomePage extends React.Component {
                 <TestimonialSliderLayout />
             </Container> */}
             <Container>
-                <MeetAnExpert/>
+                <MeetAnExpert meetAnExpert={DesignMeetAnExpertData}/>
             </Container>
                   
             </MainContainer>
