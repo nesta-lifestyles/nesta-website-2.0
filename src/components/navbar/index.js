@@ -31,8 +31,10 @@ const NavBar = styled.nav`
     padding-right: 75px;
     background-color:#F5F5F5;
     @media (max-width:600px){
-        background-color: transparent;
+        background-color: white;
+        opacity: 0.7;
         width: 100%;
+        height: 30px;
         right: 0;
         flex-direction: row;
         padding-right: 0px;
@@ -107,8 +109,8 @@ const LogoLink3 = styled.img`
     padding:5px;
     cursor: pointer;
     @media (max-width:600px){
-        width: 56px;
-        height: 56px;
+        width: 24px;
+        height: 30px;
         margin-top: 15px;
     }
 `
@@ -120,8 +122,8 @@ const Bars = styled.img`
     margin:15px;
     cursor: pointer;
     @media (max-width:600px){
-        width: 34px;
-        height: 34px;
+        width: 24px;
+        height: 24px;
     }
 `;
 
@@ -382,6 +384,12 @@ const Navbar=() => {
     const [showNavBar, updateNavBar] = useState(menuFlag)
     const NavBarHandler = () => {
         if(isMobile) {
+            var navContainer = document.getElementById("nav_bar_container")
+            if (navContainer && !showNavBar) {
+                navContainer.style.opacity=1
+            } else {
+                navContainer.style.opacity=0.7
+            }
             updateNavBar(!showNavBar)
         }
         
@@ -390,7 +398,7 @@ const Navbar=() => {
 
     
     return(<>
-        <NavBar>
+        <NavBar id="nav_bar_container">
             <Container>
                 <LogoLink3 src={invertedLogoImage} />
                 <Bars src={menuBars} onClick={NavBarHandler} />
