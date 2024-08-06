@@ -26,10 +26,10 @@ const images = [firstImage, second, third]
  * }]
  */
 
-const Titles = ["Nestaville1", "NestaDesign2", "Nestaville23"]
+const Titles = ["", "", ""]
 const ColorCodes = ["#FFA652", "#7A7369", "#658354"]
 
-export const CarouselLocal = () => {
+export const CarouselLocal = (props) => {
     return(<Carousel fade interval ="1000" indicators={false} controls={false} pause={false} >
         {images.map((slide, i) => {
             return (
@@ -41,7 +41,7 @@ export const CarouselLocal = () => {
                   src={slide}
                   alt="slider image"
                   />
-                  <Title animationflag = {false} title={Titles[i]} color_codes={ColorCodes[i]}/>  
+                  <Title animationflag = {false} title={Titles[i]} color_codes={ColorCodes[i]} handleMeetUsButton ={props.handleMeetUsButton}/>  
                {/* </ImageContainer>  */}
             </Carousel.Item>
     ) 

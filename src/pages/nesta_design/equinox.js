@@ -7,11 +7,13 @@ import { GalleryLayout2 } from "../../layouts/gallery_layout"
 import { initialEquinoxDesignData } from "./data/equinox"
 import MeetAnExpert from "../../components/meet_an_expert"
 import { MainContainerDiv } from "../../App"
+import { connect } from "react-redux"
+import { openOverlay } from "../../components/overlay/overlay_reducer"
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -30,11 +32,19 @@ class NestaDesignEquinox extends React.Component {
         this.state = initialEquinoxDesignData;
     }
 
+   
+
     render(){
+        const contactUsHandler = (props) => {
+            console.log("CONTACT US CALLED")
+            const { openOverlay } = this.props;                
+            openOverlay();
+        }
+    
         return( 
             <MainContainerDiv>
                 <Container>
-            <BannerComponent banner={this.state.banner}/>
+            <BannerComponent banner={this.state.banner}  meetAnExpertHandler={contactUsHandler}/>
             <WeimarCharacteristics characteristics={this.state.inspiration}/>
             <div>
                 <GalleryLayout2 images={this.state.gallery}/>
@@ -47,4 +57,4 @@ class NestaDesignEquinox extends React.Component {
     }
 }
 
-export default NestaDesignEquinox;
+export default connect(null, {openOverlay})(NestaDesignEquinox);

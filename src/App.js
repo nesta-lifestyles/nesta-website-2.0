@@ -21,6 +21,7 @@ import { ContactUsPage } from './pages/contact_us';
 import {  ContactAnExpertPage } from './pages/contact_an_expert';
 import { ScheduleCallAgent } from './pages/contact_us/schedule_call';
 import Footer from './components/footer';
+import { OverlayScreen } from './components/overlay';
 
 const EntirePageContainer = styled.div`
     /* padding-left: 44px;
@@ -86,6 +87,7 @@ function App() {
        <Router>
         <Navbar/>
        <ContentContainer>
+        <OverlayScreen />
         <ScrollToTop/>
         <Routes> 
               <Route path='/' Component={NestaHomePage} />

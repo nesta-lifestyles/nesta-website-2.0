@@ -1,7 +1,6 @@
 import React from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import styled from "styled-components";
-import { OnlyTitle} from "../../components/banner/title";
 import { H2 } from "../../elements/text";
 import { KnowMoreButton, MeetUsButton } from "../../elements/button/know_more";
 
@@ -151,7 +150,7 @@ const DivText = styled.div`
 const DivText2 = styled.div`
     position: absolute;
     left: 58px;
-    bottom: 30px;
+    bottom:40px;
     height: 40px;
     max-height: 40px;
     animation: 1s ease-out 0s 1 slideInFromLeft;
@@ -231,7 +230,7 @@ export const BannerWithTitleLayout =(props)=>{
      classNames={{enterActive: 'animate__animated animate__flipInX', exitActive: 'animate__animated animate__flipOutX'}}>
        {state => <StyledDiv src={props.src} style={{...transitions[state]}}>
                     <DivText2> 
-                        <OnlyTitle props={props} animationflag = {props.animationflag} title={props.title}/>
+                      <H2 value={props.title} color="white" width= "100%" height="40px" weight="600"/>
                     </DivText2>
                 </StyledDiv>}
         </CSSTransition></SwitchTransition>

@@ -10,7 +10,7 @@ const StyledImage = styled.img`
     max-width: ${props => props.width === undefined? "100%;" : props.width}; 
     max-height: ${props => props.height === undefined? "100%;" : props.height};
     
-    /* &:hover {
+     /* &:hover {
         transform: ${props => props.isTransformOnHover? "scale(1.2)" :" scale(1)"};
         transform-origin: ${props => props.isTransformOnHover?"50% 50%": "0% 0%"};       
     } */
@@ -25,6 +25,7 @@ const StyledDiv = styled.div`
     display: inline-block;
     overflow: hidden;   
     border-radius: 16px; 
+    
 `
 
 const BannerImageContainer = styled.img`
@@ -43,6 +44,40 @@ const BannerImageContainer = styled.img`
         transform-origin: ${props => props.isTransformOnHover?"50% 50%": "0% 0%"};       
     } */
 `
+
+
+export const SideImage = styled.img`
+    display: block;
+    transition: transform .4s;
+    object-fit: fill;
+    width: 100%;
+    height:  100%;
+    max-width: 100%; 
+    max-height:  100%;
+    border-radius: 16px;
+    
+    /* &:hover {
+        transform: ${props => props.isTransformOnHover? "scale(1.2)" :" scale(1)"};
+        transform-origin: ${props => props.isTransformOnHover?"50% 50%": "0% 0%"};       
+    } */
+`
+
+export const ImageInRow = styled.img`
+    display: block;
+    transition: transform .4s;
+    object-fit: fill;
+    width: 390px;
+    height:  400px;
+    max-width: 390px; 
+    max-height:  400px;
+    border-radius: 16px;
+    
+    /* &:hover {
+        transform: ${props => props.isTransformOnHover? "scale(1.2)" :" scale(1)"};
+        transform-origin: ${props => props.isTransformOnHover?"50% 50%": "0% 0%"};       
+    } */
+`
+
 
 
 const ImageNotFound = "Image Not Found!!"

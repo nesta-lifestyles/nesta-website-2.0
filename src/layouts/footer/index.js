@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { SmallText } from "../../elements/text"
 import { InputTextBoxEmail } from "../../elements/form"
-import { ContactUsButton, SubscribeButton } from "../../elements/button/know_more"
+import { ContactUs, SubscribeButton } from "../../elements/button/know_more"
 
 
 const Container = styled.div`
@@ -37,7 +37,7 @@ export const RightCornerLayout = () => {
     return(<Container>
             <div>
                 <SmallText width="100%" color="white" value="Any Questions?" height="24px" />
-                <ContactUsButton />
+                <ContactUs />
             </div>
             <div>
                 <SmallText width="100%" color="white" value="Leave Your Email To Stay Informed. "height="24px" />

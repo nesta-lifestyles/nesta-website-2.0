@@ -4,9 +4,25 @@ import inspiration1 from "../../../images/designs/nesta_design_100/inspiration_1
 import inspiration2 from "../../../images/designs/nesta_design_100/inspiration_2.avif"
 import inspiration3 from "../../../images/designs/nesta_design_100/inspiration_3.avif"
 import whyToChooseImage from "../../../images/designs/nesta_design_100/why_to_choose.avif"
-import gallery1 from "../../../images/designs/nesta_design_100/gallery_1_1.avif"
-import gallery2 from "../../../images/designs/nesta_design_100/gallery_1_2.avif"
-import gallery3 from "../../../images/designs/nesta_design_100/gallery_1_3.avif"
+
+import kitchen11 from "../../../images/designs/nesta_design_100/gallery_k_1_1.avif"
+import kitchen12 from "../../../images/designs/nesta_design_100/gallery_k_1_2.avif"
+import kitchen13 from "../../../images/designs/nesta_design_100/gallery_k_1_3.avif"
+
+
+import bedRoom11 from "../../../images/designs/nesta_design_100/gallery_br_1_1.avif"
+import bedRoom12 from "../../../images/designs/nesta_design_100/gallery_br_1_2.avif"
+import bedRoom13 from "../../../images/designs/nesta_design_100/gallery_br_2_1.avif"
+
+import hall11 from "../../../images/designs/nesta_design_100/gallery_h_1_1.avif"
+import hall12 from "../../../images/designs/nesta_design_100/gallery_h_1_2.avif"
+import hall13 from "../../../images/designs/nesta_design_100/gallery_h_1_2.avif"
+
+import bedRoom21 from "../../../images/designs/nesta_design_100/gallery_br_2_12.avif"
+import bedRoom22 from "../../../images/designs/nesta_design_100/gallery_br_2_2.avif"
+import bedRoom23 from "../../../images/designs/nesta_design_100/gallery_br_2_3.avif"
+
+
 import { DesignMeetAnExpertData } from "./contour"
 
 
@@ -34,7 +50,7 @@ const whyToChoose = {
 }
 
 
-const galleryImages = [gallery1,gallery2,gallery3]
+const galleryImages = [[hall11,hall12,hall13],[bedRoom11,bedRoom12,bedRoom13],[bedRoom21,bedRoom22,bedRoom23],[kitchen11,kitchen12,kitchen13]]
     
 export const initialFlorenceDesignData = {
     "banner":banner,

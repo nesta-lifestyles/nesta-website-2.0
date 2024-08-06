@@ -69,7 +69,7 @@ export const Banner =(props)=>{
     return <StyledBannerDiv>
       <StyledOuterDiv>
       <StyledDiv>
-                    <CarouselLocal>
+                    <CarouselLocal handleMeetUsButton={props.handleMeetUsButton}>
                     </CarouselLocal>
                     </StyledDiv>
         </StyledOuterDiv>

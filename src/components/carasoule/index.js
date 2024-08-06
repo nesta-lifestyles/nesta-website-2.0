@@ -4,8 +4,6 @@ import { useState } from "react";
 import { Image } from "../../elements/image";
 import "./ind.css"
 import styled from "styled-components";
-import { PrevIndicator } from "../../elements/banner/prev_indicator";
-import { NextIndicator } from "../../elements/banner/next_indicator";
 
 
 /**
@@ -39,7 +37,7 @@ const CarouselContainer = styled.div`
 `
 
 const ImageContainer =styled.div`
-  width: 815px;
+  width: 100%;
   
   @media (max-width:600px){
       width:100% !important;
@@ -53,24 +51,8 @@ export const LocalCarousel = (props) => {
   // const [currentSlide, setCurrentSlide] = useState(0);
 
     const [index, setIndex] = useState(props.index);
-    const handleNext = () => {
-      let nextIndex = index+1
-      if(nextIndex === props.data.length) {
-        nextIndex= 0
-      }
-      setIndex(nextIndex);
-      props.updateIndex(nextIndex);
-    };
   
-    const handlePrev = () => {
-      let prevIndex = index-1
-      if(prevIndex === -1) {
-        prevIndex= props.data.length-1
-      }
-      setIndex(prevIndex);
-      props.updateIndex(prevIndex);
-    };
-  
+    
     // const handleSlideChange = (index) => {
     //   setIndex(index);
     // };
@@ -80,16 +62,16 @@ export const LocalCarousel = (props) => {
       props.updateIndex(selectedIndex);
     };
 
-    console.log("ACTIVE INDEX"+props.index)
     return (
       <CarouselContainer>
-        <Carousel fade activeIndex={index} onSelect={handleSelect}  interval ="10000" indicators={false} controls={false} >
+        <Carousel fade activeIndex={index} onSelect={handleSelect}  interval ="1000" indicators={false} controls={false} >
                     {props.data.map((slide, i) => {
                         return (
                         <Carousel.Item>        
                            <ImageContainer>
                             <Image
                               height={props.height}
+                              width="765px"
                               src={slide}
                               alt="slider image"
                               />
@@ -98,12 +80,12 @@ export const LocalCarousel = (props) => {
                 ) 
               })} 
        </Carousel>
-      <div className="carousel-controls left">
+      {/* <div className="carousel-controls left">
                 <PrevIndicator onClick={handlePrev} />
       </div>  
       <div className="carousel-controls right">          
         <NextIndicator className="right"  onClick={handleNext} />
-      </div>
+      </div> */}
       </CarouselContainer>
         
     );

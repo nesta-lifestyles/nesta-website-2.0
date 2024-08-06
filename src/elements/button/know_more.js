@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -137,7 +139,7 @@ export const KnowMoreButton = styled.div`
     }
 `
 
-export const ContactUsButton = styled.div`
+const ContactUsButton = styled.div`
     position: relative;
     border-radius: 8px;
     color: white;
@@ -154,12 +156,12 @@ export const ContactUsButton = styled.div`
         
     }
 
-    &::before {
+    /* &::before {
         content: "Contact Us";
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
+    } */
 
     &:hover{
         transition: 0.35s;
@@ -176,7 +178,7 @@ export const ContactUsButton = styled.div`
     }
 `
 
-export const ContactUsButtonRounded = styled.div`
+const ContactUsButtonRounded = styled.div`
     border-radius: 40px;
     color: white;
     background-color: #4597F9;
@@ -199,12 +201,12 @@ export const ContactUsButtonRounded = styled.div`
         margin-top: 15px;
     }
 
-    &::before {
+    /* &::before {
         content: "Contact Us";
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
+    } */
 
     &:hover{
         transition: 0.35s;
@@ -220,7 +222,19 @@ export const ContactUsButtonRounded = styled.div`
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 `
+const ContactUsLink = styled(Link)`
+    text-decoration: none;
+    color: white;
+`
 
+
+export const ContactUs=()=>{
+    return(<ContactUsLink to="/contact-us"><ContactUsButton>Contact Us</ContactUsButton></ContactUsLink>)
+}
+
+export const ContactUsRounded=()=>{
+    return(<ContactUsLink to="/contact-us"><ContactUsButtonRounded>Contact Us</ContactUsButtonRounded></ContactUsLink>)
+}
 
 
 

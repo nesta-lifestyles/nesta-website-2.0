@@ -9,12 +9,36 @@ import { Banner } from '../components/banner';
 import styled from 'styled-components';
 import MeetAnExpert from '../components/meet_an_expert';
 import { DesignMeetAnExpertData } from './nesta_design/data/contour';
+import { connect } from 'react-redux';
+import { openOverlay } from '../components/overlay/overlay_reducer';
 
 const Container = styled.span`
     display: flex;
     width: 100%;
     height: 100%;
     padding-top: 100px;
+    padding-bottom: 100px;
+    flex-direction: column;
+    padding-left: 90px;
+    padding-right: 90px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width:600px){
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+`
+
+const BannerContainer = styled.span`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 100px; */
     padding-bottom: 100px;
     flex-direction: column;
     padding-left: 90px;
@@ -43,12 +67,19 @@ const MainContainer = styled.div`
 
 class NestaHomePage extends React.Component {
     
+    
     render() {
+        const contactUsHandler = (props) => {
+            const { openOverlay } = this.props;                
+            openOverlay();
+        }
+
         return (
             <MainContainer>
-            <Container>
-                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={first} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} onNextIndicatorClick={this.HandleNextDesign}/>
-            </Container>
+            <BannerContainer>
+                    <Banner title="Nestaville - Where Artistry Meets Architecture" src={first} animationflag = {true} OnPrevIndicatorClick={this.HandlePreviousDesign} 
+                    onNextIndicatorClick={this.HandleNextDesign} handleMeetUsButton={contactUsHandler}/>
+            </BannerContainer>
             <Container style={{backgroundColor: "white"}}>
                     <ImageTextWithTitleLayout bg_color="white" image={first} title="Uncover your Unique" text="Feeling Lost in Your Style Choices? Let Nesta Guide You to Discover Your Design" />
             </Container>   
@@ -87,4 +118,4 @@ class NestaHomePage extends React.Component {
         );
     }
 }
-export default NestaHomePage;
+export default connect(null, {openOverlay})(NestaHomePage);

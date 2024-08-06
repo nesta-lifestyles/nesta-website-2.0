@@ -6,20 +6,17 @@ import MeetAnExpert from "../../components/meet_an_expert";
 import { BannerLayout } from "../../layouts/banner_layout";
 import { NestaVilleFeatures } from "../../components/nesta_ville/feature";
 import { NestavilleHomePageData } from "./data/home";
-import { ContactAnExpertPage } from "../contact_an_expert";
-import { Overlay } from "react-bootstrap";
-import { ScheduleCallAgent } from "../contact_us/schedule_call";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { SendUsAMessage } from "../contact_us/send_us_message";
 import { ProductInformation } from "../../components/navbar/nav_bar_content";
 import { MainContainerDiv } from "../../App";
 import { ProcessLayout } from "../../layouts/process_layout";
+import { openOverlay } from "../../components/overlay/overlay_reducer";
+import { connect } from "react-redux";
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
     position: relative;
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding:70px;
     display: flex;
     flex-direction: column;
@@ -73,23 +70,12 @@ class NestaVilleHomePage extends React.Component{
     };
 
    render(){ 
+
         const contactUsHandler = (props) => {
-            this.updateOverlayState();
-            console.log("After us clicked..."+this.state.showOverlay)
-            if(!this.state.showOverlay){
-                    document.body.classList.add('no-scroll')
-            } else {
-                document.body.classList.remove('no-scroll')
-            }
+            const { openOverlay } = this.props;                
+            openOverlay();
         }
 
-        const switchOverlay = (overlay) => {
-            console.log("SWITCH OVERLAY CALLED")
-            window.history.pushState(null, null, `#some`);
-            this.setState({ 
-                currentOverlay: overlay
-            })
-        };
 
         return(<MainContainerDiv >
             <Container id="main_container">
@@ -102,49 +88,9 @@ class NestaVilleHomePage extends React.Component{
                     <NestaVilleFeatures />
                     <GalleryLayout images={NestavilleHomePageData.gallery}></GalleryLayout>
                     <MeetAnExpert meetAnExpert={NestavilleHomePageData.meetAnExpert}/>
-                    <TransitionGroup>
-                {this.state.currentOverlay === 'overlay1' && (
-                    
-                    <CSSTransition
-                        key="overlay1"
-                        timeout={500}
-                        classNames="overlay"
-                    >
-                        <Overlay show={this.state.showOverlay} placement="auto" transition={true}>
-                                 <ContactAnExpertPage  updateOverlayState={contactUsHandler} onSwitch={switchOverlay}/>
-                                {/* <ScheduleCallAgent  updateOverlayState={contactUsHandler}/> */}
-                            </Overlay>
-                        {/* <Overlay1 onSwitch={switchOverlay} /> */}
-                    </CSSTransition>
-                )}
-
-                {this.state.currentOverlay === 'overlay2' && (
-                    <CSSTransition
-                        key="overlay2"
-                        timeout={500}
-                        classNames="overlay"
-                    >
-                    <Overlay show={this.state.showOverlay} placement="auto" transition={true}>
-                        {/* <ContactAnExpertPage  updateOverlayState={contactUsHandler}/> */}
-                        <ScheduleCallAgent  updateOverlayState={contactUsHandler}/>
-                    </Overlay>
-                    </CSSTransition>)}
-                
-                    {this.state.currentOverlay === 'overlay3' && (
-                    <CSSTransition
-                        key="overlay3"
-                        timeout={500}
-                        classNames="overlay"
-                    >
-                    <Overlay show={this.state.showOverlay} placement="auto" transition={true}>
-                        {/* <ContactAnExpertPage  updateOverlayState={contactUsHandler}/> */}
-                        <SendUsAMessage  updateOverlayState={contactUsHandler}/>
-                    </Overlay>
-                    </CSSTransition>)}
-                    </TransitionGroup>
             </Container>
     </MainContainerDiv>)
 }
 }
 
-export default NestaVilleHomePage
+export default connect(null, {openOverlay})(NestaVilleHomePage)

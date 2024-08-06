@@ -6,11 +6,13 @@ import { BannerComponent } from "../../components/nesta_ville/weimar/banner"
 import { initialClassicaVillaData } from "./data/classica"
 import MeetAnExpert from "../../components/meet_an_expert"
 import { MainContainerDiv } from "../../App"
+import { connect } from "react-redux"
+import { openOverlay } from "../../components/overlay/overlay_reducer"
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
+    /* margin-top: 105px; */
     border-radius: 16px;
     padding:70px;
     display: flex;
@@ -32,10 +34,16 @@ class NestaVilleClassica extends React.Component{
     }
 
     render(){
+        const contactUsHandler = (props) => {
+            console.log("CONTACT US CALLED")
+            const { openOverlay } = this.props;                
+            openOverlay();
+        }
+
         return( 
             <MainContainerDiv >
                 <Container>
-                    <BannerComponent  banner={this.state.banner}/>
+                    <BannerComponent  banner={this.state.banner} meetAnExpertHandler={contactUsHandler}/>
                     <WeimarCharacteristics characteristics={this.state.characteristics}/>
                     <BannerWithTitleLayout title={this.state.secondaryBanners[0].title} src={this.state.secondaryBanners[0].image} />
                     <WeimarCharacteristics characteristics={this.state.comfortAnalysis}/>
@@ -47,4 +55,4 @@ class NestaVilleClassica extends React.Component{
         )}
 }
 
-export default NestaVilleClassica
+export default connect(null, {openOverlay})(NestaVilleClassica)

@@ -4,7 +4,8 @@ import logoImage from '../../images/logo/11.png'
 import { NavLink as Link } from 'react-router-dom';
 import React, {useState }  from 'react';
 import menuBars from "../../images/menu/menu.png"
-import invertedLogoImage from '../../images/logo/logo.png'
+import invertedLogoImage from '../../images/logo/11.png'
+import whiteLogo from "../../images/logo/logo_white.svg"
 import moibleNestaLogo from '../../images/logo/logo_white.svg'
 import moibleMenuOpenNestaLogo from '../../images/logo/logo_secondary.svg'
 import { ProductInfo } from "../../layouts/product_info";
@@ -13,7 +14,7 @@ import XIcon from "../../images/icons/x_svg.svg"
 import { Image } from "../../elements/image";
 import { isMobile } from "react-device-detect";
 import { Text } from "../../elements/text";
-import { ContactUsButtonRounded } from "../../elements/button/know_more";
+import { ContactUsRounded } from "../../elements/button/know_more";
 
 // import { Text } from "../../elements/text";
 
@@ -26,12 +27,12 @@ const NavBar = styled.nav`
     align-items: center;
     height: 100px;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     padding-right: 75px;
     background-color:#F5F5F5;
     @media (max-width:600px){
-        background-color: white;
+        background-color: #141414;
         opacity: 1;
         width: 100%;
         height:50px;
@@ -121,6 +122,7 @@ const Bars = styled.img`
     /* margin:15px; */
     cursor: pointer;
     @media (max-width:600px){
+        
         width: 24px;
         height: 24px;
         margin-top: 10px;
@@ -394,7 +396,7 @@ const Navbar=() => {
     return(<>
         <NavBar>
             <Container>
-                <LogoLink3 src={invertedLogoImage} />
+                <LogoLink3 src={whiteLogo} />
                 <Bars src={menuBars} onClick={NavBarHandler} />
             </Container>
            {showNavBar && 
@@ -437,7 +439,7 @@ const Navbar=() => {
                 <Divider />
                 <BottomContainer> <Text value="© 2024 Nesta Company" color="#878383" width="200px"/></BottomContainer>       
             </MenuLink> )}
-            {showNavBar && <ContactUsButtonRounded />}
+            {showNavBar && <ContactUsRounded />}
             
             {/* <LoginAlert>
                 <NotificationButton></NotificationButton>

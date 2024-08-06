@@ -7,11 +7,13 @@ import { initialContourDesignData } from "./data/contour"
 import { GalleryLayout2 } from "../../layouts/gallery_layout"
 import MeetAnExpert from "../../components/meet_an_expert"
 import { MainContainerDiv } from "../../App"
+import { openOverlay } from "../../components/overlay/overlay_reducer"
+import { connect } from "react-redux"
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -30,11 +32,22 @@ class NestaDesignContour extends React.Component {
         this.state = initialContourDesignData;
     }
 
+
+
     render(){
+        
+        const contactUsHandler = (props) => {
+            console.log("CONTACT US CALLED")
+            const { openOverlay } = this.props;                
+            openOverlay();
+        }
+
+        // this.setState({'meetAnExpertHandler':contactUsHandler,});
+        
         return( 
             <MainContainerDiv>
                  <Container>
-            <BannerComponent banner={this.state.banner}/>
+            <BannerComponent banner={this.state.banner} meetAnExpertHandler={contactUsHandler}/>
             <WeimarCharacteristics characteristics={this.state.inspiration}/>
             <div>
                 <GalleryLayout2 images={this.state.gallery}/>
@@ -48,4 +61,4 @@ class NestaDesignContour extends React.Component {
     }
 }
 
-export default NestaDesignContour;
+export default connect(null, {openOverlay})(NestaDesignContour);

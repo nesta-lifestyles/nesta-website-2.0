@@ -2,6 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 import { H2, Text } from "../../elements/text";
 import { MeetUsButton } from "../../elements/button/know_more";
+import { useDispatch } from "react-redux";
+import { openOverlay } from "../overlay/overlay_reducer";
 
 /**
  * 
@@ -14,6 +16,11 @@ import { MeetUsButton } from "../../elements/button/know_more";
 
 
 export default function MeetAnExpert(props) {
+  const dispatch = useDispatch();
+  const contactUsHandler = (props) => {
+        dispatch(openOverlay())
+  }
+
   console.log("MEET AN EXPERT DATA - "+JSON.stringify(props))
   return (
     <Div>
@@ -29,7 +36,7 @@ export default function MeetAnExpert(props) {
             <H2 value={props.meetAnExpert.title} width="100%" color="white" height="auto" />
             <Text color="white"  height="auto" width="100%" value={props.meetAnExpert.text}>
             </Text>
-            <MeetUsButton />
+            <MeetUsButton onClick={contactUsHandler} />
           </Div3>
         </Column2>
       </Div2>

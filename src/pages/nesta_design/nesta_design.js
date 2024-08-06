@@ -8,11 +8,13 @@ import { NestaDesignHomePageData } from "./data/home";
 import { ProcessLayout } from "../../layouts/process_layout";
 import MeetAnExpert from "../../components/meet_an_expert";
 import { MainContainerDiv } from "../../App";
+import { useDispatch} from "react-redux";
+import { openOverlay } from "../../components/overlay/overlay_reducer";
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -47,10 +49,15 @@ export const NestaDesignHomePage = () => {
         });
     };
 
+    const dispatch = useDispatch();
+    const contactUsHandler = (props) => {
+        dispatch(openOverlay())
+    }
+
     return(<MainContainerDiv>
             <Container>
                     <BannerLayout title={NestaDesignHomePageData.banner.banner_title} src={NestaDesignHomePageData.banner.image} animationflag ={true} 
-                    OnPrevIndicatorClick={HandlePreviousDesign} KnowMoreHandler={() => scrollToSection(myRef, "models")} onNextIndicatorClick={HandleNextDesign}/>
+                    contactUsHandler={contactUsHandler}  OnPrevIndicatorClick={HandlePreviousDesign} KnowMoreHandler={() => scrollToSection(myRef, "models")} onNextIndicatorClick={HandleNextDesign}/>
                     <div ref={myRef}>
                         <ExploreModelsLayout models={NestaDesignInformation}/>
                     </div>

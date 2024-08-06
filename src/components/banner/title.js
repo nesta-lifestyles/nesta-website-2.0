@@ -103,7 +103,7 @@ export const Title = (props) => {
       <TitleContainer id="title_container">
           {/* <DivText2> */}
             <Container>
-              <H1 value="Nestaville - Where Artistry Meets" color="white" height="auto"></H1>
+              <H1 value="Nestaville - Where Artistry Meets Architecture" color="white" height="auto"></H1>
               <DivText>
                 <H1 value={props.title} color={props.color_codes} width= "100%" height="auto"/>
               </DivText>
@@ -111,7 +111,7 @@ export const Title = (props) => {
             
             <DivButtonContainer>
                 <ExploreButton> Models</ExploreButton>
-                <MeetUsButton/> 
+                <MeetUsButton onClick={props.handleMeetUsButton} /> 
             </DivButtonContainer>
           {/* </DivText2> */}
       </TitleContainer>

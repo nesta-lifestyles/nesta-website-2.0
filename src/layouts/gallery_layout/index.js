@@ -5,6 +5,8 @@ import styled from "styled-components"
 import { Image } from "../../elements/image"
 import { useState } from "react"
 import { H1, H2 } from "../../elements/text"
+import { PrevIndicator } from "../../elements/banner/prev_indicator"
+import { NextIndicator } from "../../elements/banner/next_indicator"
 
 const Container = styled.div`
     margin: auto;
@@ -254,10 +256,31 @@ export const GalleryLayout = (props) =>{
 }
 
 
+const ControlsContainer =styled.div`
+    width: 100%;
+    position: absolute;
+    top:35%;
+    /* left: -4%;
+    right: -41%; */
+    display: flex;
+    justify-content: space-between;
+    
+`
+
+const PrevContainer = styled.div`
+    margin-left: -50px;
+`
+
+const NextContainer = styled.div`
+    margin-right: -20px;
+`
+
 export const GalleryLayout2 = (props) =>{
     const [activeIndex, updateActiveIndex] = useState(1)
+    const [ActiveImageSeriesIndex, updateActiveImagesSeriesIndex] = useState(1)
     
     const updateActiveIndexValue = (index) =>{
+        console.log("UPDATE ACTIVE INDEX VALUE " + index)
         updateActiveIndex(index)
     }
 
@@ -275,10 +298,10 @@ export const GalleryLayout2 = (props) =>{
         }
 
         return (
-            <FirstImageContainer2 id="first_image" onClick={() => updateActiveIndexValue(0)}>
+            <FirstImageContainer2 id="first_image" onClick={() => updateActiveIndexValue(1)}>
                 <Image  width= "412px"
                 height= "252px"
-                src={props.images[0]}
+                src={props.images[ActiveImageSeriesIndex][0]}
                 alt="slider image"
                 id="first_image"
                 />
@@ -297,24 +320,53 @@ export const GalleryLayout2 = (props) =>{
         }
 
         return (
-            <ThirdImageContainer2  id="second_image" onClick={() => updateActiveIndexValue(1)}>
+            <ThirdImageContainer2  id="second_image" onClick={() => updateActiveIndexValue(2)}>
                         <Image  width= "412px"
                         height= "252px"
-                        src={props.images[1]}
+                        src={props.images[ActiveImageSeriesIndex][1]}
                         alt="slider image"
                         />
             </ThirdImageContainer2>
             )
     }
 
+    const handleNextImageSeries =() => {
+        var toUpdateActiveImageSeriesIndex = ActiveImageSeriesIndex;
+        if(ActiveImageSeriesIndex===props.images.length-1) {
+            toUpdateActiveImageSeriesIndex = 0
+        } else {
+            toUpdateActiveImageSeriesIndex +=1
+        }
+        updateActiveImagesSeriesIndex(toUpdateActiveImageSeriesIndex)
+    }
+
+    const handlePrevImageSereis =() => {
+        var toUpdateActiveImageSeriesIndex = ActiveImageSeriesIndex;
+        if(ActiveImageSeriesIndex===0) {
+            toUpdateActiveImageSeriesIndex = props.images.length-1
+        } else {
+            toUpdateActiveImageSeriesIndex -=1
+        }
+        updateActiveImagesSeriesIndex(toUpdateActiveImageSeriesIndex)
+    }
+
     return(<Container>
         <GalleryTitleContainer2><H2 value="Gallery" color="black" width="150px"  height="auto"/> </GalleryTitleContainer2>
         <GalleryLayoutContainer>
-            <LocalCarousel width="765px" height="537px" data={props.images} index={activeIndex} updateIndex={updateActiveIndex}/>
-            <ImagesLayoutContainer>
-                {getFirstImage()}
-                {getSecondImage()}
-            </ImagesLayoutContainer>
+            <LocalCarousel width="765px" height="537px" data={props.images[ActiveImageSeriesIndex]} index={activeIndex} 
+            updateIndex={updateActiveIndexValue}/>
+                <ImagesLayoutContainer>
+                    {getFirstImage()}
+                    {getSecondImage()}
+                </ImagesLayoutContainer>
+                <ControlsContainer>
+                    <PrevContainer>
+                        <PrevIndicator onClick={handlePrevImageSereis}/>
+                    </PrevContainer>
+                    <NextContainer>
+                        <NextIndicator onClick={handleNextImageSeries}/>
+                    </NextContainer>
+                </ControlsContainer>
         </GalleryLayoutContainer>
     </Container>)
 }

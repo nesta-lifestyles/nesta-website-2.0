@@ -7,11 +7,13 @@ import { initialSerendiDesignData } from "./data/serendi"
 import { WhyToChoose } from "../../components/nesta_design/why_to_choose"
 import MeetAnExpert from "../../components/meet_an_expert"
 import { MainContainerDiv } from "../../App"
+import { connect } from "react-redux"
+import { openOverlay } from "../../components/overlay/overlay_reducer"
 
 const Container = styled.div`
     /* margin-left: 70px;
     margin-right: 73px; */
-    margin-top: 105px;
+    /* margin-top: 105px; */
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -29,12 +31,19 @@ class NestaDesignSerendi extends React.Component {
         super();
         this.state = initialSerendiDesignData;
     }
+    
 
     render(){
+        const contactUsHandler = (props) => {
+            console.log("CONTACT US CALLED")
+            const { openOverlay } = this.props;                
+            openOverlay();
+        }
+    
         return( 
             <MainContainerDiv>
                     <Container>
-                        <BannerComponent banner={this.state.banner}/>
+                        <BannerComponent banner={this.state.banner}  meetAnExpertHandler={contactUsHandler}/>
                         <WeimarCharacteristics characteristics={this.state.inspiration}/>
                         <div>
                             <GalleryLayout2 images={this.state.gallery}/>
@@ -47,4 +56,4 @@ class NestaDesignSerendi extends React.Component {
     }
 }
 
-export default NestaDesignSerendi;
+export default connect(null, {openOverlay})(NestaDesignSerendi);

@@ -5,6 +5,7 @@ import { Enquiries } from "../../components/contact_us/enquiries"
 import { BannerWithTitleLayout } from "../../layouts/banner_layout"
 import bannerImage from "../../images/contact_us.png"
 import { H2 } from "../../elements/text"
+import { MainContainerDiv } from "../../App"
 
 const Container = styled.div`
     /* margin-left: 70px;
@@ -69,7 +70,8 @@ const ContentContainer = styled.div`
 `
 
 export const ContactUsPage = () =>{
-        return(<TotalContainer>
+        return(<MainContainerDiv>
+            <TotalContainer>
             <Container>   
             <BannerWithTitleLayout src={bannerImage} title="Contact Us"/>
             <ContentContainer>
@@ -85,5 +87,6 @@ export const ContactUsPage = () =>{
             </ContentContainer>   
             </Container>
         </TotalContainer>
+            </MainContainerDiv>
         )
 }

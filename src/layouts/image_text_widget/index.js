@@ -1,7 +1,7 @@
 import { H1, H2,  Text } from "../../elements/text"
 import React from 'react';
 import styled from "styled-components";
-import { Image } from "../../elements/image";
+import { ImageInRow, SideImage } from "../../elements/image";
 
 const ImageTextTag = styled.div`
     display: flex;
@@ -44,13 +44,13 @@ const TextImageTag = styled.div`
 
 const ImageContainer = styled.div`
     width: 100%;
-    height: auto;
+    height: 396px;
     /* max-width: 500px; */
     flex:1;
-    border-radius: 17px;
     @media (max-width:600px){
         width: 100%;
-        height: 300px;
+        max-height: 100%;
+        height: 396px;
         max-width: 100%;
         display: flex;
         flex-direction: column;
@@ -104,7 +104,7 @@ export const ImageTextLayout = (props) => {
         <>
         <ImageTextTag bg_color={props.bg_color}>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <SideImage srcSet={props.image} />
                 </ImageContainer>
                 <TextContainer>
                     <Text value={props.text} />
@@ -117,17 +117,15 @@ export const ImageTextLayout = (props) => {
 
 export const ImageTextWithTitleLayout = (props) => {
     return(
-        <>
         <ImageTextTag bg_color={props.bg_color}>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <SideImage srcSet={props.image} />
                 </ImageContainer>
                 <TextContainer>
                     <H1 value={props.title} color="black" width= "100%" height="auto"></H1>
                     <Text value={props.text}  width= "100%" height="100%"/>
                 </TextContainer>
         </ImageTextTag>
-        </>
     )
 }
 
@@ -139,7 +137,7 @@ export const TextWithTitleWithImageLayout = (props) =>{
                     <Text value={props.text} width= "100%" height="100%"/>
                 </TextContainer>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <SideImage srcSet={props.image} />
                 </ImageContainer>
             </TextImageTag>
         
@@ -151,7 +149,7 @@ export const ImageWithTextWithTitleLayout = (props) =>{
         <>
             <ImageTextTag  bg_color={props.bg_color}>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <SideImage srcSet={props.image} />
                 </ImageContainer>
                 <TextContainer>
                     <H2 value={props.title} color="black" width= "649px" height="auto" weight="600"></H2>
@@ -170,9 +168,9 @@ export const TextWithImageLayout = (props) =>{
                     <Text value={props.text} />
                 </TextContainer>
                 <ImageContainer>
-                    <Image src={props.image} width="100%" height="100%"/>
-                    <Image src={props.image} width="100%" height="100%"/>
-                    <Image src={props.image} width="100%" height="100%"/>
+                    <SideImage srcSet={props.image} />
+                    <SideImage srcSet={props.image} />
+                    <SideImage srcSet={props.image} />
                 </ImageContainer>
             </ImageTextTag>
         </>
@@ -186,9 +184,9 @@ export const TitleTextImagesInRowLayout = (props) => {
                 <H2 value={props.title} color="black" width= "300px" height="auto" weight="600"></H2>
                 <Text value={props.text} width="100%" height="auto" />
                 <RowContainer>
-                    <Image src={props.images[0]} width="100%" height="400px"/>
-                    <Image src={props.images[1]} width="100%" height="400px"/>
-                    <Image src={props.images[2]} width="100%" height="400px"/>
+                    <ImageInRow srcSet={props.images[0]} />
+                    <ImageInRow srcSet={props.images[1]} />
+                    <ImageInRow srcSet={props.images[2]} />
                 </RowContainer>   
             </ColumnContainer>
         </>
@@ -201,7 +199,7 @@ export const TitleTextImageInRowLayout = (props) => {
             <ColumnContainer>
                 <H2 value={props.title} color="black" width= "649px" height="auto" weight="600"></H2>
                 <Text value={props.text} width="100%" height="auto" />
-                <Image src={props.image} width="100%" height="100%"/>
+                <SideImage srcSet={props.image} />
             </ColumnContainer>
         </>
     )

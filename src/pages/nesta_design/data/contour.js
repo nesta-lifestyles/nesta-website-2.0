@@ -6,6 +6,15 @@ import whyToChooseImage from "../../../images/designs/nesta_design_103/why_to_ch
 import gallery1 from "../../../images/designs/nesta_design_103/gallery_1_1.avif"
 import gallery2 from "../../../images/designs/nesta_design_103/gallery_1_2.avif"
 import gallery3 from "../../../images/designs/nesta_design_103/gallery_1_3.avif"
+
+import gallery4 from "../../../images/designs/nesta_design_102/gallery_1_1.avif"
+import gallery5 from "../../../images/designs/nesta_design_102/gallery_1_2.avif"
+import gallery6 from "../../../images/designs/nesta_design_102/gallery_1_3.avif"
+
+import gallery7 from "../../../images/designs/nesta_design_100/gallery_1_1.avif"
+import gallery8 from "../../../images/designs/nesta_design_100/gallery_1_2.avif"
+import gallery9 from "../../../images/designs/nesta_design_100/gallery_1_3.avif"
+
 import meetAnExpertImage from "../../../images/designs/nesta_design_103/meet_an_expert.avif"
 
 const banner = {
@@ -44,7 +53,7 @@ export const DesignMeetAnExpertData = {
 //  *    "image":""
 //  * }
 
-const galleryImages = [gallery1,gallery2, gallery3]
+const galleryImages = [[gallery1,gallery2, gallery3],[gallery4,gallery5, gallery6],[gallery7,gallery8, gallery9]]
 
 export const initialContourDesignData = {
     "banner":banner,

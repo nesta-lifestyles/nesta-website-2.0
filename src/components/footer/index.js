@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import Logo from "./logo_white.svg"
 import { RightCornerLayout } from "../../layouts/footer";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -17,28 +18,28 @@ export default function Footer() {
           <Column>
               <Div5>
                 <Div6>PRODUCTS</Div6>
-                <Div7>Nesta Ville</Div7>
-                <Div7>Nesta Design </Div7>
+                <Div7 to="/ville">Nesta Ville</Div7>
+                <Div7 to="/design">Nesta Design </Div7>
                 <Div7>Nesta Decor</Div7>
               </Div5>
             </Column>
             <Column>
               <Div5>
                 <Div6>NESTA VILLE</Div6>
-                <Div7>Weimar</Div7>
-                <Div7>Essence</Div7>
-                <Div7>Classica</Div7>
-                <Div7>Arcadia</Div7>
-                <Div7>Evoque</Div7>
+                <Div7 to="/ville/weimar">Weimar</Div7>
+                <Div7 to="/ville/essence">Essence</Div7>
+                <Div7 to="/ville/classica">Classica</Div7>
+                <Div7 to="/ville/arcadia">Arcadia</Div7>
+                <Div7 to="/ville/evoque">Evoque</Div7>
               </Div5>
             </Column>
             <Column2>
               <Div9>
                 <Div6>NESTA DESIGN</Div6>
-                <Div7>Florence</Div7>
-                <Div7>Equinox</Div7>
-                <Div7>Contour</Div7>
-                <Div7>Serendi</Div7>
+                <Div7 to="/design/florence">Florence</Div7>
+                <Div7 to="/design/equinox">Equinox</Div7>
+                <Div7 to="/design/contour">Contour</Div7>
+                <Div7 to="/design/serendi">Serendi</Div7>
               </Div9>
             </Column2>
             <Column3>
@@ -156,13 +157,15 @@ const Div6 = styled.div`
   
 `;
 
-const Div7 = styled.div`
+const Div7 = styled(Link)`
   font-family: Poppins, sans-serif;
   margin-top: 10px;
   opacity: 0.8;
   transition: 0.35s;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: white;
   &:hover{
     opacity: 1;
     transition: 0.35s;

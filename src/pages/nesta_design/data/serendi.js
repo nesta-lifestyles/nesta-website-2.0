@@ -1,12 +1,22 @@
 import bannerTestImage from "../../../images/designs/nesta_design_102/banner.avif"
-import inspiration1 from "../../../images/designs/nesta_design_102/inspiration_1.avif"
+import inspiration1 from "../../../images/designs/nesta_design_102/inspiration_2_1.png"
 import inspiration2 from "../../../images/designs/nesta_design_102/inspiration_2.avif"
 import inspiration3 from "../../../images/designs/nesta_design_102/inspiration_3.avif"
 import whyToChooseImage from "../../../images/designs/nesta_design_102/why_to_choose.png"
-import gallery1 from "../../../images/designs/nesta_design_102/gallery_1_1.avif"
-import gallery2 from "../../../images/designs/nesta_design_102/gallery_1_2.avif"
-import gallery3 from "../../../images/designs/nesta_design_102/gallery_1_3.avif"
+
 import { DesignMeetAnExpertData } from "./contour"
+
+import bedRoom11 from "../../../images/designs/nesta_design_102/gallery_br_1_1.avif"
+import bedRoom12 from "../../../images/designs/nesta_design_102/gallery_br_1_2.avif"
+import bedRoom13 from "../../../images/designs/nesta_design_102/gallery_br_1_3.avif"
+
+import hall11 from "../../../images/designs/nesta_design_102/gallery_h_1_1.avif"
+import hall12 from "../../../images/designs/nesta_design_102/gallery_h_1_2.avif"
+import hall13 from "../../../images/designs/nesta_design_102/gallery_h_1_3.avif"
+
+import misc11 from "../../../images/designs/nesta_design_102/gallery_m_1_1.png"
+import misc12 from "../../../images/designs/nesta_design_102/gallery_m_1_2.png"
+import misc13 from "../../../images/designs/nesta_design_102/gallery_m_1_3.avif"
 
 const banner = {
     "image":bannerTestImage,
@@ -32,7 +42,7 @@ const whyToChoose = {
     ]
 }
 
-const galleryImages = [gallery1,gallery2,gallery3]
+const galleryImages = [[hall11,hall12,hall13],[bedRoom11,bedRoom12,bedRoom13],[misc11,misc12,misc13]]
 
 export const initialSerendiDesignData = {
     "banner":banner,

@@ -31,6 +31,6 @@ export const BannerComponent = (props) =>{
         <LeftContainer>
             <TitleWithTextLayout title={props.banner.side_title} text={props.banner.text}/>
         </LeftContainer>
-        <BannerWithTitleAndButtonLayout src={props.banner.image} title={props.banner.banner_title} onClickHandler={props.banner.meetAnExpertHandler} />
+        <BannerWithTitleAndButtonLayout src={props.banner.image} title={props.banner.banner_title} onClickHandler={props.meetAnExpertHandler} />
     </Container>)
 }
