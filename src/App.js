@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/navbar';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components';
 import NestaHomePage from './pages/home';
 import { NestaDesignHomePage } from './pages/nesta_design/nesta_design';
@@ -22,6 +22,9 @@ import {  ContactAnExpertPage } from './pages/contact_an_expert';
 import { ScheduleCallAgent } from './pages/contact_us/schedule_call';
 import Footer from './components/footer';
 import { OverlayScreen } from './components/overlay';
+import { NestaDecorHomePage } from './pages/nesta_decor/decor_home_page';
+import { DecorItemPage } from './pages/nesta_decor/decor_item_page';
+import { DecoreItemContext } from './pages/nesta_decor/decor_item_context';
 
 const EntirePageContainer = styled.div`
     /* padding-left: 44px;
@@ -77,20 +80,30 @@ const ContentContainer = styled.div`
     } */
 `
 
-
 function App() {
+
+  const [currentSelectedDecorItem, updateSelectedDecoreItem] = useState(null)
+  const updateDecoreItem=(item)=>{
+    console.log("APP updateDecoreItem"+JSON.stringify(item))
+    updateSelectedDecoreItem(item)
+}
+
   return (
     <div className="App">
       <React.StrictMode>
 
        <EntirePageContainer>
-       <Router>
+        <DecoreItemContext.Provider value={{currentSelectedDecorItem, updateDecoreItem}}>
+        <Router>
         <Navbar/>
        <ContentContainer>
         <OverlayScreen />
         <ScrollToTop/>
+
         <Routes> 
               <Route path='/' Component={NestaHomePage} />
+              <Route path='/decor' Component={NestaDecorHomePage}/>
+              <Route path='/decor/:name' Component={DecorItemPage}/>
               <Route path='/design'  Component={NestaDesignHomePage} />
               <Route path='/ville'  Component={NestaVilleHomePage} />
               <Route path='/design/home' Component={NestaDesignHomePage} />
@@ -111,6 +124,8 @@ function App() {
           <Footer/>   
         </ContentContainer>
        </Router>
+       
+        </DecoreItemContext.Provider>
        
        </EntirePageContainer>
        </React.StrictMode>

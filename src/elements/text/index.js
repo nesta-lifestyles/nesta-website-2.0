@@ -87,6 +87,7 @@ const StyledText = styled.p`
     }
 `
 
+
 const StyledSmallText = styled.p`
     width: ${props => props.width === undefined?"479px":props.width};
     height: ${props => props.height === undefined?"216px":props.height};
@@ -120,6 +121,11 @@ export const H3 = (props) => {
 export const Text = (props) => {
     return <StyledText width={props.width} height={props.height} color={props.color}> {props.value} </StyledText>
 } 
+
+export const MediumText = (props) => {
+  return <StyledText width={props.width} height={props.height} color={props.color}> {props.value} </StyledText>
+} 
+
 
 export const SmallText = (props) => {
   return <StyledSmallText width={props.width} height={props.height} color={props.color}> {props.value} </StyledSmallText>

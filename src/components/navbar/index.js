@@ -428,7 +428,7 @@ const Navbar=() => {
                     </ProductInfoContainer>
                 </div>
                 <div>
-                    <MenuItem>Nesta Decor</MenuItem>
+                    <MenuItem  to='/decor'>Nesta Decor</MenuItem>
                 </div>
                 {/* <div>
                     <MenuItem>Nesta Sense</MenuItem>

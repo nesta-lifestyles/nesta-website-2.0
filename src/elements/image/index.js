@@ -83,8 +83,9 @@ export const ImageInRow = styled.img`
 const ImageNotFound = "Image Not Found!!"
 
 export const Image = (props) => {
-    return    (<StyledDiv width={props.width} height={props.height} isTransformOnHover={props.isTransformOnHover} >
-                        <StyledImage src={props.src} alt={ImageNotFound} width={props.width} height={props.height} id={props.id}/>
+    return    (<StyledDiv width={props.width} height={props.height} isTransformOnHover={props.isTransformOnHover} onClick={props.handleOnClick}>
+                        <StyledImage src={props.src} alt={ImageNotFound} width={props.width} height={props.height} id={props.id}
+                        />
                 </StyledDiv>)
 }
 
