@@ -29,8 +29,9 @@ border-radius: 16px;
 const FirstHalfContainer = styled.div`
     display: flex;
     flex-direction: row;
-    
-   
+    @media (max-width:600px){
+        flex-direction: column;
+    }
     /* border-bottom-width: 5px; */
 `
 
@@ -70,7 +71,7 @@ export const DecorItemPage =(props) => {
                     <DecorItemInfo decorItem = {currentSelectedDecorItem} />
                 </FirstHalfContainer>
                 <SecondHalfContainer>
-                    <H2 value="Description" height="20px"/>
+                    <H2 value="Description" height="20px" width="100%"/>
                     <TextContainer>
                         {currentSelectedDecorItem.description.map((eachSentence , i) => <Text value={eachSentence}  height="auto" width="100%"/>)}
                     </TextContainer>

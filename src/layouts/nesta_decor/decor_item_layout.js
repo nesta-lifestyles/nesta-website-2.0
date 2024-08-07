@@ -35,6 +35,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     padding-left:20px;
     text-align: left;
+    
 `
 
 const ButtonContainer = styled.div`

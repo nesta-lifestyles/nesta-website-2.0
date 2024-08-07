@@ -35,8 +35,8 @@ export const DecorItemInforLayout  = (props) => {
     return(<ColumnContainer>
     <TextContainer>
         <HeartButton background_color="#F5F5F5"/>
-        <H2 value={props.decorItem.name} height="40px"/>
-        <Text value={props.decorItem.information} height="100%"/>
+        <H2 value={props.decorItem.name} height="40px" width="100%"/>
+        <Text value={props.decorItem.information} height="100%" width="100%"/>
     </TextContainer>
     <ButtonContainer>
         <AddToCartButton></AddToCartButton>

@@ -7,6 +7,9 @@ const DecorImagesMainContainer  = styled.div`
     flex-direction: column;
     gap: 20px;
     width: 464px;
+    @media (max-width:600px){
+        width: 100%;
+    }
 `
 
 const DecorSubImagesContainer = styled.div`
@@ -20,14 +23,21 @@ const DecorSubImageContainer = styled.div`
     width: 142px;
     height: 140px;
     cursor: pointer;
+    @media (max-width:600px){
+        width: 120px;
+        height: 120px;
+    }
 `
 
 const DecorMainImageContainer = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 19px;
+    /* gap: 19px; */
     width: 100%;
     height: 445px;
+    @media (max-width:600px){
+        height: 100%;
+    }
 `
 
 
