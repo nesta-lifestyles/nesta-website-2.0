@@ -8,10 +8,14 @@ import { NestaDecorItemList } from "../../components/nesta_decor/decor_items_lis
 import styled from "styled-components";
 import { DecoreItemContext} from "./decor_item_context";
 import { useNavigate } from "react-router-dom";
+import { NestaDecorCartContext } from "./decor_basket_context";
 
 
 export const NestaDecorHomePage = () =>{
     const { updateDecoreItem } = useContext(DecoreItemContext);
+    const { cart } = useContext(NestaDecorCartContext);
+
+    console.log("NESTE DECORE HOME PAGE")
     const dispatch = useDispatch();
     const contactUsHandler = (props) => {
         dispatch(openOverlay())
@@ -45,6 +49,7 @@ export const NestaDecorHomePage = () =>{
                 <BannerLayout title={NestaDecorData.banner.title} src={NestaDecorData.banner.image}
                 contactUsHandler={contactUsHandler}></BannerLayout>
                 <NestaDecorItemList decorItems = {NestaDecorData.decorItems} onDecorItemClick={onDecorItemClick}/>
+                <p>CART HAS {cart.length}</p>
             </Container>
         </MainContainerDiv>
     )

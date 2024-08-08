@@ -79,7 +79,7 @@ const StyledText = styled.p`
     font-size: 18px;
     overflow: hidden;
     -ms-wrap-flow: end;
-    text-align: left;
+    /* text-align: left; */
     color: ${props => props.color === undefined?"#1B1E1E":props.color};;
     @media (max-width: 600px) {
       font-weight: 300;

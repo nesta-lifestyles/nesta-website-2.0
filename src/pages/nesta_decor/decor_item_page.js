@@ -62,6 +62,7 @@ const TextContainer = styled.div`
 
 export const DecorItemPage =(props) => {
     const { currentSelectedDecorItem } = useContext(DecoreItemContext);
+    console.log("CURRENT SELECTED DECORE ITEM"+JSON.stringify(currentSelectedDecorItem))
     return(<MainContainerDiv>
             <Container>
                 <FirstHalfContainer>
